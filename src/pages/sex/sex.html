@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>{{ 'SEX_TITLE' | translate }}</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content>   
+    <form (submit)="doActivateCustomerDateOfBirth()">
+      <ion-list radio-group name="sex" [(ngModel)]="itemChecked">      
+        <ion-item>
+            <ion-label text-wrap>{{ 'SEX_MESSAGE' | translate }}</ion-label>        
+        </ion-item>
+  
+        <div text-center padding>
+            <ion-grid>
+                <ion-row>
+                  <ion-col>
+                      <ion-label>{{ 'MALE' | translate }}</ion-label>        
+                      <ion-radio value="male" (ionSelect)="select($event)" (click)="enableButton($event)" ></ion-radio>
+                  </ion-col>
+                  <ion-col>
+                      <ion-label>{{ 'FEMALE' | translate }}</ion-label>        
+                      <ion-radio value="female" (ionSelect)="select($event)" (click)="enableButton($event)"></ion-radio>
+                  </ion-col>                
+                  <ion-col>
+                      <ion-label>{{ 'LGBTTI' | translate }}</ion-label>        
+                      <ion-radio value="lgbtti" (ionSelect)="select($event)" (click)="enableButton($event)"></ion-radio>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>        
+        </div>                    
+        
+        <div padding>
+          <button ion-button color="primary" block [disabled]="checkedbtn" name="continue">{{ 'NEXT' | translate }}</button>        
+        </div>
+        <div text-center padding>
+        <u>{{ 'LATER' | translate }}</u>
+        </div>
+  
+      </ion-list>
+    </form>
+  
+    
+  
+  </ion-content>

@@ -1,0 +1,96 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'SIGNUP_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <form (submit)="doSignup()">
+    <ion-list>
+<!--
+      <ion-row class="imagewithlabelselect image_{{imagewithlabel}}">
+          <ion-item>
+            <ion-label floating>{{ 'COUNTRY' | translate }}</ion-label>
+            <ion-select (click)="prepareImageWithLabelSelector()" (ionChange)="setImageWithLabel(this.imagewithlabel)" [(ngModel)]="imagewithlabel" name="country">
+              <ion-option *ngFor="let optionimage of images" [value]="optionimage">{{optionimage}}</ion-option>
+            </ion-select>
+          </ion-item>
+      </ion-row>
+-->
+      <ion-row class="imagewithlabelselect image_{{ account.country }}">
+          <ion-item>
+              <ion-label floating>{{ 'COUNTRY' | translate }}</ion-label>
+              <ion-select [(ngModel)]="account.country" (click)="prepareCountryImageWithLabelSelector()" (ionChange)="setCountryImageWithLabel(this.imagewithlabel)" name="country">
+                <ion-option *ngFor="let country of countries" [value]="country.cca2" >{{ country.cca2 }} - {{ country.name.common }}</ion-option>
+              </ion-select>
+            </ion-item>
+      </ion-row>
+
+      <ion-item>
+        <ion-label floating>{{ 'EMAIL' | translate }}</ion-label>
+        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>{{ 'PASSWORD' | translate }}</ion-label>
+        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+      </ion-item>
+      
+      <ion-item text-wrap>
+        <ion-row>
+           <ion-col col-1 no-padding no-margin>
+             <ion-item no-padding no-margin no-lines>
+              <ion-checkbox [(ngModel)]="account.commercialagreement" name="commercialagreement" (ionChange)="updateSingUpButton($event)"></ion-checkbox>
+             </ion-item>
+           </ion-col>
+           <ion-col col-10 no-padding no-margin align-self-start>
+             <ion-item no-padding no-margin no-lines (click)="goToCommercialAgreement()">
+              <u>{{ 'SIGNUP_CHECKBOX_COMMERCIAL_AGREMENT' | translate }}</u>
+             </ion-item>
+           </ion-col>
+         </ion-row>
+       </ion-item>
+
+      <ion-item text-wrap>
+        <ion-row>
+           <ion-col col-1 no-padding no-margin>
+             <ion-item no-padding no-margin no-lines>
+              <ion-checkbox [(ngModel)]="account.privacypolity" name="privacypolity" (ionChange)="updateSingUpButton($event)"></ion-checkbox>
+             </ion-item>
+           </ion-col>
+           <ion-col col-10 no-padding no-margin align-self-start>
+             <ion-item no-padding no-margin no-lines (click)="goToTermsAndConditions()">
+              <u>{{ 'SIGNUP_CHECKBOX_PRIVACY_POLICY' | translate }}</u>
+             </ion-item>
+           </ion-col>
+         </ion-row>
+       </ion-item>
+     
+      <ion-item text-wrap>
+        <ion-row>
+           <ion-col col-1 no-padding no-margin>
+             <ion-item no-padding no-margin no-lines>
+              <ion-checkbox [(ngModel)]="account.legalage" name="legalage" (ionChange)="updateSingUpButton($event)"></ion-checkbox>
+             </ion-item>
+           </ion-col>
+           <ion-col col-10 no-padding no-margin align-self-start>
+             <ion-item no-padding no-margin no-lines >
+              {{ 'SIGNUP_CHECKBOX_LEGAL_AGE' | translate }}
+             </ion-item>
+           </ion-col>
+         </ion-row>
+       </ion-item>
+      
+      <div padding>
+        <button ion-button color="primary" block [disabled]="checkedbtn" name="continue">{{ 'SIGNUP_BUTTON' | translate }}</button>
+      </div>
+
+    </ion-list>
+  </form>
+
+  
+
+</ion-content>

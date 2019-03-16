@@ -1,0 +1,5 @@
+$tabs-background: map-get($colors, secondary);
+$tabs-ios-tab-icon-color: rgba($text-color, 0.4);
+$tabs-ios-tab-icon-color-active: $text-color;
+$tabs-ios-tab-min-height: 58px;
+$tabs-ios-border: none;

@@ -1,0 +1,132 @@
+{
+  "COUNTRY" : "Pais",
+  "NAME": "Nombre",
+  "USERNAME": "Usuario",
+  "PASSWORD": "Contraseña",
+  "EMAIL": "Email",
+  "LOGIN": "Iniciar sesión",
+  "SIGNUP": "Registrarse",
+  "ACTIVATE_BUTTON": "Activar",
+
+  "YES": "Si",
+  "NO": "No",
+  "NEXT": "Siguiente",
+  "LATER": "Continuar despues",
+
+  "TAB1_TITLE": "Historial",
+  "TAB2_TITLE": "Recibir",
+  "TAB3_TITLE": "Inicio",
+  "TAB4_TITLE": "Enviar",
+  "TAB5_TITLE": "Preferencias",
+
+  "MAP_TITLE": "Mapa",
+  
+  "LIST_TRANSACTIONS_TITLE": "Historial de Hiro",
+  "TUTORIAL_SKIP_BUTTON": "Saltar",
+  "TUTORIAL_CONTINUE_BUTTON": "Continuar",
+
+  "TUTORIAL_SLIDE1_TITLE": "Bienvenido a Hiro",
+  "TUTORIAL_SLIDE1_DESCRIPTION": "Hiro te ayudara a mejorar tu administracion financiera y cumplir tus sueños.",
+
+  "TUTORIAL_SLIDE2_TITLE": "Cómo usar Hiro",
+  "TUTORIAL_SLIDE2_DESCRIPTION": "Agrega la tarjeta de debito o credito que quieras administrar.",
+
+  "TUTORIAL_SLIDE3_TITLE": "Empezamos",
+  "TUTORIAL_SLIDE3_DESCRIPTION": "¿Necesitas ayuda? Activa el asistente digital de administracion financiera inteligente.",
+
+  "TUTORIAL_SLIDE4_TITLE": "¿Listo para mejorar tus finanzas?",
+
+  "TUTORIAL_LETS_GO": "¡Vamos!",
+
+  "SETTINGS_TITLE": "Ajustes",
+  "SETTINGS_OPTION1": "Opción 1",
+  "SETTINGS_OPTION2": "Opción 2",
+  "SETTINGS_OPTION3": "Opción 3",
+  "SETTINGS_OPTION4": "Opción 4",
+
+  "SETTINGS_PAGE_PROFILE": "Editar Perfil",
+
+  "WELCOME_TITLE": "Bienvenido/a",
+
+  "LOGIN_TITLE": "Iniciar sesión",
+  "LOGIN_ERROR": "No se ha podido iniciar sesión. Por favor revisa la información de la cuenta e inténtalo de nuevo.",
+  "LOGIN_BUTTON": "Iniciar sesión",
+  "SIGNUP_TITLE": "Registro",
+  "SIGNUP_ERROR": "No se ha podido crear la cuenta. Por favor revisa la información de la cuenta e inténtalo de nuevo.",
+  "SIGNUP_BUTTON": "Registrarse",
+  "SIGNUP_CHECKBOX_COMMERCIAL_AGREMENT": "Ya leí y acepto términos y condiciones de Hiro.",
+  "SIGNUP_CHECKBOX_PRIVACY_POLICY": "Acepto la política de privacidad.",
+  "SIGNUP_CHECKBOX_LEGAL_AGE": "Tengo más de 18 años.",
+
+  "LIST_MASTER_TITLE": "Items",
+
+  "ITEM_CREATE_TITLE": "Nuevo Item",
+  "ITEM_CREATE_CHOOSE_IMAGE": "Añadir Imagen",
+
+  "CARDS_TITLE": "Social",
+
+  "DASHBOARD_TITLE": "Mi Dinero",
+  "DASHBOARD_TITLE_INITIAL": "Agrega fondos a tu cartera",
+  "DASHBOARD_BUTTON_INITIAL": "Activa tu cuenta",
+
+  "ACTIVATE_COUNTRY_OF_BIRTH_TITLE": "Pais de nacimiento",
+  "ACTIVATE_COUNTRY_OF_BIRTH_MESSAGE": "Requerimos conocer tu nacionalidad principal",
+  "ACTIVATE_COUNTRY_OF_BIRTH_LABEL": "¿Naciste en México?",
+  "ACTIVATE_COUNTRY_OF_BIRTH_STATE": "¿En que estado Naciste?",
+  "ACTIVATE_COUNTRY_OF_BIRTH_LABEL_STATE": "Estado",  
+
+  "NAME_TITLE": "Nombre legal",
+  "NAME_MESSAGE": "Rquerimos el nombre como aparece en tu identificacion oficial",
+  "NAME_LABEL_NAME": "Nombre(s)",
+  "NAME_LABEL_LAST_NAME": "Apellido Paterno",
+  "NAME_LABEL_SECOND_LAST_NAME": "Apellido Materno",
+  "NAME_LABEL_SECOND_LAST_NAME_FIX": "Coloca una X si no tienes un apellido paterno o materno",
+  "NAME_ALERT_TITLE" : "¿Tu nombre esta correctamente escrito?",
+  "NAME_ALERT_TEXT_1" : "Recuerda que este debe ser tu nombre legal completo <br><br> " ,
+  "NAME_ALERT_TEXT_2" : "  <br><br> Si tu lo confirmas, no podra ser modificado posteriormente" ,
+  "NAME_ALERT_TEXT_NO" : "No, editar" ,
+  "NAME_ALERT_TEXT_YES" : "Si, es mi nombre legal" ,
+
+  "SIGNUP_ALERT_TITLE" : "¿Tus datos son correctos?",
+  "SIGNUP_ALERT_TEXT_1" : "Recibiras por correo electronico el codigo de activacion de tu cuenta.",
+  "SIGNUP_ALERT_TEXT_NO" : "No, editar" ,
+  "SIGNUP_ALERT_TEXT_YES" : "Si, continuemos" ,
+
+  "ACTIVATE_CUSTOMER_TITLE": "Activacion de cliente",
+  "ACTIVATE_CUSTOMER_MESSAGE": "Ingresa el codigo de activacion que recibiste por email",
+  "ACTIVATE_CUSTOMER_LABEL": "Codigos de activacion",
+  "ACTIVATE_CUSTOMER_LABEL_CODE1": "Request",
+  "ACTIVATE_CUSTOMER_LABEL_CODE2": "Authentication",
+
+  "SEX_TITLE": "Genero Legal",
+  "SEX_MESSAGE": "Vivimos en el siglo XX, pero por razones legales, debemos conocer tu genero",
+
+  "MALE": "Masculino",
+  "FEMALE": "Femenino",
+  "LGBTTI": "LGBTTI",
+
+  "DATE_OF_BIRTH_TITLE": "Fecha de nacimiento",  
+  "DATE_OF_BIRTH_LABEL": "¿Cual es la fecha de tu nacimiento?",
+  "DATE_OF_BIRTH_MESSAGE": "Como aparece en tu identificacion oficial",
+
+  "OCUPPATION_TITLE": "Ocupación",
+  "OCUPPATION_LABEL":"¿Cual es tu ocupacion?",
+  "OCUPPATION_MESSAGE":"Escoge la que mas te describa",
+
+  "CELL_PHONE_NUMBER_TITLE": "Número celular",
+  "CELL_PHONE_NUMBER_LABEL":"Tu Numero",
+  "CELL_PHONE_NUMBER_MESSAGE":"Lo requerimos para contactarte en caso de ser necesario",
+
+  "OCUPPATION_1": "Asalariado ",
+  "OCUPPATION_2": "Servidor Publico",
+  "OCUPPATION_3": "Empresario o Autoempleado",
+  "OCUPPATION_4": "Proveedor de servicios independiente",
+  "OCUPPATION_5": "Fundación / Asociación",
+  "OCUPPATION_6": "Estudiante",
+  "OCUPPATION_7": "Otro",
+
+  "DASHBOARD_TAB_FAVS": "Favoritos",
+  "DASHBOARD_TAB_ALL": "Todos",
+
+  "SEARCH_TITLE": "Buscar"
+}

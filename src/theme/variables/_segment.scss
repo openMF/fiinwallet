@@ -1,0 +1,17 @@
+$segment-button-ios-background-color: map-get($colors, secondary);
+$segment-button-ios-background-color-activated: $list-background-color;
+$segment-button-ios-text-color: $text-color;
+$segment-button-ios-transition-activated: 100ms all linear;
+$segment-button-ios-transition-hover: 100ms all linear;
+$segment-button-ios-transition-active: 100ms all linear;
+$segment-button-ios-opacity-hover: .1;
+$segment-button-ios-opacity-active: .16;
+$segment-button-ios-opacity-activated: 1;
+$segment-button-ios-opacity-disabled: .3;
+$segment-button-ios-border-width: 0;
+$segment-button-ios-border-radius: 0;
+$segment-button-ios-toolbar-button-max-width: 100%;
+$segment-button-ios-toolbar-button-height: 100%;
+$segment-button-ios-toolbar-line-height: 320%;
+$segment-button-ios-toolbar-font-size: 1.5rem;
+

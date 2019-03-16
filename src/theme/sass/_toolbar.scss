@@ -1,0 +1,11 @@
+.toolbar-header .toolbar-title {
+  position: relative;
+  height: 100%;
+}
+
+.toolbar-header {
+  min-height: 0;
+  .toolbar-background {
+    background: map-get($colors, secondary-light);
+  }
+}

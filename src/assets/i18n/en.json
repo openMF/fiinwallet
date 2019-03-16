@@ -1,0 +1,144 @@
+{
+  "BACK_BUTTON_TEXT": "Back",
+  "COUNTRY" :"Country",
+  "NAME": "Name",
+  "EMAIL": "Email",
+  "USERNAME": "Username",
+  "PASSWORD": "Password",
+  "LOGIN": "Sign in",
+  "SIGNUP": "Sign up",
+  "ACTIVATE_BUTTON": "Activate",
+
+  "YES": "Yes",
+  "NO": "No",
+  "NEXT": "Next",
+  "LATER": "Continue later",
+
+  "TAB1_TITLE": "History",
+  "TAB2_TITLE": "Receive",
+  "TAB3_TITLE": "Home",
+  "TAB4_TITLE": "Send",
+  "TAB5_TITLE": "Settings",
+  
+  "MAP_TITLE": "Map",
+
+  "LIST_TRANSACTIONS_TITLE": "Wallet's Movements",
+  "TUTORIAL_SKIP_BUTTON": "Skip",
+  "TUTORIAL_CONTINUE_BUTTON": "Continue",
+
+  "TUTORIAL_SLIDE1_TITLE": "Welcome to Hiro",
+  "TUTORIAL_SLIDE1_DESCRIPTION": "Hiro will help you to have a better control of your financial life and make your dreams real.",
+
+  "TUTORIAL_SLIDE2_TITLE": "How to use Hiro",
+  "TUTORIAL_SLIDE2_DESCRIPTION": "Add the debit or credit card that you want to manage.",
+
+  "TUTORIAL_SLIDE3_TITLE": "Here we go!",
+  "TUTORIAL_SLIDE3_DESCRIPTION": "Do you need some help? Just enable the smart digital assistant.",
+
+  "TUTORIAL_SLIDE4_TITLE": "Ready to have a take control of your financial life?",
+
+  "TUTORIAL_LETS_GO": "Let's go!",
+
+  "MALE": "Male",
+  "FEMALE": "Female",
+  "LGBTTI": "LGBTTI",
+
+  "WELCOME_INTRO": "The starting financial point for your next great dream",
+
+  "SETTINGS_TITLE": "Settings",
+  "SETTINGS_OPTION1": "Option 1",
+  "SETTINGS_OPTION2": "Option 2",
+  "SETTINGS_OPTION3": "Option 3",
+  "SETTINGS_OPTION4": "Option 4",
+
+  "SETTINGS_PROFILE_BUTTON": "Edit Profile",
+
+  "SETTINGS_PAGE_PROFILE": "Edit Profile",
+
+  "WELCOME_TITLE": "Welcome",
+
+  "LOGIN_TITLE": "Sign in",
+  "LOGIN_ERROR": "Unable to sign in. Please check your account information and try again.",
+  "LOGIN_BUTTON": "Sign in",
+  "SIGNUP_TITLE": "Sign up",
+  "SIGNUP_ERROR": "Unable to create account. Please check your account information and try again.",
+  "SIGNUP_BUTTON": "Sign up",
+  "SIGNUP_CHECKBOX_COMMERCIAL_AGREMENT": "I have read and I accept the terms and conditions.",
+  "SIGNUP_CHECKBOX_PRIVACY_POLICY": "I accept the privacy policy.",
+  "SIGNUP_CHECKBOX_LEGAL_AGE": "I have the required legal age.",
+
+  "LIST_MASTER_TITLE": "Items",
+
+  "ITEM_CREATE_TITLE": "New Item",
+  "ITEM_CREATE_CHOOSE_IMAGE": "Add Image",
+
+  "ITEM_NAME_PLACEHOLDER": "Name",
+  "ITEM_ABOUT_PLACEHOLDER": "About",
+
+  "DONE_BUTTON": "Done",
+  "CANCEL_BUTTON": "Cancel",
+  "DELETE_BUTTON": "Delete",
+
+  "CARDS_TITLE": "Social",
+  "DASHBOARD_TITLE": "My Money",
+  "DASHBOARD_TITLE_INITIAL": "Fund your wallet",
+  "DASHBOARD_BUTTON_INITIAL": "Activate your account",
+  "DASHBOARD_TAB_FAVS": "Favorites",
+  "DASHBOARD_TAB_ALL": "All",
+
+  "ACTIVATE_COUNTRY_OF_BIRTH_TITLE": "Country of Birth",
+  "ACTIVATE_COUNTRY_OF_BIRTH_MESSAGE": "We need to know your primary nationality",
+  "ACTIVATE_COUNTRY_OF_BIRTH_LABEL": "Were you born in Mexico?",
+  "ACTIVATE_COUNTRY_OF_BIRTH_LABEL_STATE": "State",  
+  "ACTIVATE_COUNTRY_OF_BIRTH_STATE": "What State where you born in?",
+
+  "NAME_TITLE": "Legal Name",
+  "NAME_MESSAGE": "We need it just as it appears on your official ID",
+  "NAME_LABEL_NAME": "Name(s)",
+  "NAME_LABEL_LAST_NAME": "Last name",
+  "NAME_LABEL_SECOND_LAST_NAME": "Second last name",
+  "NAME_LABEL_SECOND_LAST_NAME_FIX": "Fix with an X if you do not legally have a maternal name",
+  "NAME_ALERT_TITLE" : "Is your name correctly written?",
+  "NAME_ALERT_TEXT_1" : "Remember it has to be your full legal name <br><br> " ,
+  "NAME_ALERT_TEXT_2" : "  <br><br> If you accept you won't be able to modify it later" ,
+  "NAME_ALERT_TEXT_NO" : "No, edit" ,
+  "NAME_ALERT_TEXT_YES" : "Yes, it is my legal name" ,
+
+  "SIGNUP_ALERT_TITLE" : "Your information is correct?",
+  "SIGNUP_ALERT_TEXT_1" : "If you agree and continue, you will receive by email the activation code.",
+  "SIGNUP_ALERT_TEXT_NO" : "No, edit" ,
+  "SIGNUP_ALERT_TEXT_YES" : "Yes, continue" ,
+
+  "ACTIVATE_CUSTOMER_TITLE": "Customer Activation",
+  "ACTIVATE_CUSTOMER_MESSAGE": "Please enter the activation code that you have receive by email",
+  "ACTIVATE_CUSTOMER_LABEL": "Activation Codes",
+  "ACTIVATE_CUSTOMER_LABEL_CODE1": "Request",
+  "ACTIVATE_CUSTOMER_LABEL_CODE2": "Authentication",
+
+  "SEX_TITLE": "Legal Gender",
+  "SEX_MESSAGE": "We live in the XX century, but for legal reason, we need to ask it",
+
+  "DATE_OF_BIRTH_TITLE": "Date of Birth",  
+  "DATE_OF_BIRTH_LABEL": "What is your date of birth?",
+  "DATE_OF_BIRTH_MESSAGE": "Just as it appears on your legal document",
+
+  "OCUPPATION_TITLE": "Occupation",
+  "OCUPPATION_LABEL":"What is your occupation?",
+  "OCUPPATION_MESSAGE":"Chose the one you most identify with",
+
+  "CELL_PHONE_NUMBER_TITLE": "Cellphone number",
+  "CELL_PHONE_NUMBER_LABEL":"Your number",
+  "CELL_PHONE_NUMBER_MESSAGE":"We need this to make sure it is you",
+
+
+  "OCUPPATION_1": "Wage-earner",
+  "OCUPPATION_2": "Public servant",
+  "OCUPPATION_3": "Enterpreneur or self-employed",
+  "OCUPPATION_4": "Independent Service provider",
+  "OCUPPATION_5": "Foundation/Association",
+  "OCUPPATION_6": "Student",
+  "OCUPPATION_7": "Other",
+
+  "SEARCH_TITLE": "Search",
+  "SEARCH_PLACEHOLDER": "Search the items list, e.g. \"Donald Duck\""
+}

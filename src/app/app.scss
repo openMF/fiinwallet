@@ -1,0 +1,51 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+@import "../theme/sass/icons";
+@import "../theme/sass/generic";
+@import "../theme/sass/buttons";
+@import "../theme/sass/grid";
+@import "../theme/sass/segment";
+@import "../theme/sass/list";
+@import "../theme/sass/logo";
+@import "../theme/sass/symbols";
+@import "../theme/sass/change-percentage";
+@import "../theme/sass/refresher";
+@import "../theme/sass/spinner";
+@import "../theme/sass/searchbar";
+@import "../theme/sass/action-sheet";
+@import "../theme/sass/toolbar";
+@import "../theme/sass/navigation";
+@import "../theme/sass/slider";
+
+ion-icon {
+    &[class*="custom-"] {
+      mask-size: contain;
+      mask-position: 50% 50%;
+      mask-repeat: no-repeat;
+      background: currentColor;
+      width: 1em;
+      height: 1em;
+    }
+  
+    &[class*="custom-wallet"] {
+      mask-image: url(../assets/icon/android/_ionicons_svg_md-wallet.svg);
+    }
+    &[class*="custom-qrscanner"] {
+      mask-image: url(../assets/icon/android/_ionicons_svg_md-qr-scanner.svg);
+    }
+  
+  }

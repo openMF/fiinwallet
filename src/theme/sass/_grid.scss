@@ -1,0 +1,14 @@
+.grid-skewed {
+  .grid-skewed_first {
+    background: $toolbar-background;
+    clip-path: polygon(0 -2%, 90% -2%, 100% 102%, 0% 102%);
+
+    ion-label {
+      font-size: 1.7rem;
+      margin: 0;
+    }
+  }
+  .grid-skewed_last {
+    //clip-path: polygon(10% 0, 100% 0%, 100% 100%, 0 100%);
+  }
+}

@@ -1,0 +1,43 @@
+[class^="fi-"], [class*=" fi-"],
+[class^="ion-ios-fi-"], [class*=" ion-ios-fi-"],
+[class^="ion-md-fi-"], [class*=" ion-md-fi-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin makeIconOutline($arg, $val) {
+  .fi-#{$arg}:before,
+  .ion-ios-fi-#{$arg}-fill-outline:before,
+  .ion-md-fi-#{$arg}-fill-outline:before {
+    content: $val;
+    font-size: 27px;
+  }
+}
+
+@mixin makeIconFill($arg, $val) {
+  .fi-#{$arg}:before,
+  .ion-ios-fi-#{$arg}-fill:before,
+  .ion-md-fi-#{$arg}-fill:before {
+    content: $val;
+    font-size: 27px;
+  }
+}
+
+@include makeIconFill(chart, '\e902');
+@include makeIconOutline(chart, '\e900');
+@include makeIconFill(money, '\e903');
+@include makeIconOutline(money, '\e901');
+@include makeIconFill(interface, '\e904');
+@include makeIconOutline(interface, '\e905');
+@include makeIconFill(signs, '\e906');
+@include makeIconOutline(signs, '\e906');

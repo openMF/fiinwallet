@@ -1,0 +1,44 @@
+ion-list {
+  margin: 0 !important;
+  ion-label {
+    //font-size: 1.8rem;
+  }
+}
+
+ion-list .price {
+  //font-size: 2.5rem;
+}
+
+ion-item-sliding ion-avatar {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+  width: 30px;
+  height: 30px;
+}
+
+.empty-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+
+  img, svg {
+    max-width: 50vw;
+    margin-bottom: 3rem;
+    display: block;
+    filter: hue-rotate(108deg) saturate(70%);
+    opacity: 0.8;
+  }
+
+  button {
+    max-width: 50vw;
+  }
+}
+
+.list-ios ion-item-options {
+  border: transparent;
+  .button {
+    min-width: 8rem;
+  }
+}

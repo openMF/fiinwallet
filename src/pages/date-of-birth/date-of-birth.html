@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>{{ 'DATE_OF_BIRTH_TITLE' | translate }}</ion-title>
+    </ion-navbar>  
+</ion-header>
+
+<ion-content>      
+    <form (submit)="doActivateCustomerOccupation()" >
+      <ion-list no-lines>      
+        
+        <ion-item>
+            <ion-label floating>{{ 'DATE_OF_BIRTH_LABEL' | translate }}</ion-label>
+            <ion-datetime (ngModelChange)="onChange($event)" displayFormat="DD MMMM YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="dateofbirth" name="dateofbirth" [min]="maxDateOfBirth()" [max]="minDateOfBirth()"></ion-datetime>
+        </ion-item>        
+        <ion-item>
+            <ion-label><small>{{ 'DATE_OF_BIRTH_MESSAGE' | translate }}</small></ion-label>        
+        </ion-item>        
+        <br>
+        <div padding>
+          <button ion-button color="primary" block [disabled]="checkedbtn" name="continue">{{ 'NEXT' | translate }}</button>        
+        </div>
+        <div text-center padding>
+        <u>{{ 'LATER' | translate }}</u>
+        </div>  
+      </ion-list>
+    </form>
+</ion-content>

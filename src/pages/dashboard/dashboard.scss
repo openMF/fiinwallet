@@ -1,0 +1,81 @@
+page-dashboard {
+    .sort-custom {
+        min-height: 40px;
+        .toolbar-background-ios {
+          background-color: $list-background-color;
+        }
+      }
+    
+      .grid, .col {
+        padding: 0;
+      }
+    
+      .select {
+        padding: 1rem 1.7rem 1rem;
+        font-size: 1.5rem;
+    
+        button {
+          padding: 0;
+        }
+      }
+    
+      .select .select-icon .select-icon-inner {
+        top: 65%;
+        color: $text-color-dark;
+      }
+    
+      ion-select {
+        position: relative;
+        max-width: 100%;
+        text-align: right;
+        color: $text-color-dark;
+      }
+    
+      .select-custom {
+        text-align: right;
+      }
+    
+      .select-custom-wrapper {
+        display: inline-block;
+      }
+    
+      .segment-ios .segment-button,
+      .segment-ios .segment-button.segment-activated,
+      .segment-ios .segment-button .button-effect {
+        transition: unset;
+      }
+    
+      .button-skewed {
+        clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+        transition: background-color 2000ms linear;
+        //transition: unset;
+    
+        &.active {
+          //transition: unset;
+    
+          clip-path: polygon(0 0, 90% 0%, 100% 100%, 0% 100%);
+        }
+      }
+    
+      .button-skewed--inverse {
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 100%);
+        transition: background-color 2000ms linear;
+        //transition: unset;
+    
+        &.active {
+          //transition: unset;
+    
+          clip-path: polygon(10% 0, 100% 0%, 100% 100%, 0 100%);
+        }
+      }
+    
+      .item {
+        .logo:after {
+          transition: all 250ms;
+        }
+    
+        &.ping .logo:after {
+          background: rgba(44, 70, 107, 0);
+        }
+      }
+}

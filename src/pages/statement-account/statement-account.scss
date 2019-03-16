@@ -1,0 +1,53 @@
+page-statement-account {
+    .scroll-content {
+        overflow: hidden;
+      }
+    
+      .coin-market-cap {
+        background: $toolbar-background;
+        padding: 0rem 1.7rem 0.5rem;
+      }
+    
+      .coin-price {
+        min-height: 30vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      .price {
+        max-width: 80%;
+        word-break: break-all;
+        line-height: 1;
+      }
+    
+      .grid-skewed {
+        ion-label, .price-change {
+          padding: 1.5rem 1.7rem;
+        }
+      }
+    
+      .chart-timestamp {
+        background: map-get($colors, secondary-dark);
+        color: $text-color;
+        font-size: 1rem;
+        padding: 0.6rem;
+        font-weight: bold;
+      }
+    
+      .date {
+        background: $toolbar-background;
+        padding: 0.1rem 0.7rem 0.2rem;
+        border-radius: 10px;
+        color: $text-color;
+      }
+    
+      .segment .segment-button {
+        color: $text-color;
+      }
+    
+      .segment .segment-button.segment-activated {
+        background: map-get($colors, secondary-dark);
+      }
+}

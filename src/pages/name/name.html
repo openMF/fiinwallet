@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>{{ 'NAME_TITLE' | translate }}</ion-title>
+    </ion-navbar>  
+  </ion-header>
+  <ion-content>      
+  
+   <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+    <form (submit)="doActivateCustomerSex()" [formGroup]="slideOneForm">
+      <ion-list no-lines>      
+        <ion-item>
+            <ion-label>{{ 'NAME_MESSAGE' | translate }}</ion-label>        
+        </ion-item>        
+        <ion-item>
+            <ion-label floating>{{ 'NAME_LABEL_NAME' | translate }}</ion-label>
+            <ion-input [(ngModel)]="name" (ngModelChange)="name = $event.toLocaleUpperCase()" formControlName="name" type="text"  name="name" (input)="onTextInput($event)" [class.invalid]="!slideOneForm.controls.name.valid && (slideOneForm.controls.name.dirty || submitAttempt)"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!slideOneForm.controls.name.valid  && (slideOneForm.controls.name.dirty || submitAttempt)">
+            <p>Please enter a valid name.</p>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>{{ 'NAME_LABEL_LAST_NAME' | translate }}</ion-label>
+            <ion-input [(ngModel)]="lastname" (ngModelChange)="lastname = $event.toLocaleUpperCase()" formControlName="lastname" type="text" name="lastname" (input)="onTextInput($event)" [class.invalid]="!slideOneForm.controls.lastname.valid && (slideOneForm.controls.lastname.dirty || submitAttempt)"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!slideOneForm.controls.lastname.valid  && (slideOneForm.controls.lastname.dirty || submitAttempt)">
+            <p>Please enter a valid lastname.</p>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>{{ 'NAME_LABEL_SECOND_LAST_NAME' | translate }}</ion-label>
+            <ion-input [(ngModel)]="secondlastname" (ngModelChange)="secondlastname = $event.toLocaleUpperCase()" formControlName="secondlastname" type="text"  name="secondlastname" (input)="onTextInput($event)" [class.invalid]="!slideOneForm.controls.secondlastname.valid && (slideOneForm.controls.secondlastname.dirty || submitAttempt)"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!slideOneForm.controls.secondlastname.valid  && (slideOneForm.controls.secondlastname.dirty || submitAttempt)">
+            <p>Please enter a valid second lastname.</p>
+        </ion-item>
+        <div padding>
+          <ion-label floating><small>{{ 'NAME_LABEL_SECOND_LAST_NAME_FIX' | translate }}</small></ion-label>              
+        </div>
+        <br>
+        <div padding>
+          <button ion-button color="primary" block [disabled]="checkedbtn" name="continue">{{ 'NEXT' | translate }}</button>        
+        </div>
+        <div text-center padding>
+        <u>{{ 'LATER' | translate }}</u>
+        </div>  
+      </ion-list>
+    </form>
+  </ion-content>

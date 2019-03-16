@@ -1,0 +1,31 @@
+.currency {
+  position: relative;
+  display: inline-block;
+
+  .currency__symbol {
+    position: absolute;
+    left: -2rem;
+    top: 1.4rem;
+    font-size: 2.5rem;
+  }
+
+  .currency__number {
+    font-size: 5rem;
+    font-weight: bold;
+  }
+}
+
+.percentage {
+  position: relative;
+  display: inline-block;
+
+  .percentage__symbol {
+    position: absolute;
+    right: -1.4rem;
+    bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .percentage__number {
+  }
+}

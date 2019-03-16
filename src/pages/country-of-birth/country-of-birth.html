@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ 'ACTIVATE_COUNTRY_OF_BIRTH_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>   
+  <form (submit)="doActivateCustomerName()">
+    <ion-list radio-group  name="countryofbirthIsMexico">      
+      <ion-item>
+          <ion-label>{{ 'ACTIVATE_COUNTRY_OF_BIRTH_MESSAGE' | translate }}</ion-label>        
+      </ion-item>
+      
+      <ion-item >
+          <div text-center padding>
+            <img src="./assets/imgs/icon-globe-400px.png" width="50%" height="50%" alt="mexico">            
+          </div>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>{{ 'ACTIVATE_COUNTRY_OF_BIRTH_LABEL' | translate }}</ion-label>        
+      </ion-item>
+
+      <div text-center padding>
+          <ion-grid>
+              <ion-row>
+                <ion-col>
+                    <ion-label>{{ 'YES' | translate }}</ion-label>        
+                    <ion-radio value="true" (click)="enableState($event)"></ion-radio>
+                </ion-col>
+                <ion-col>
+                    <ion-label>{{ 'NO' | translate }}</ion-label>        
+                    <ion-radio value="false" (click)="disableState()"></ion-radio>
+                </ion-col>                
+              </ion-row>
+            </ion-grid>        
+      </div>            
+      
+      <ion-item *ngIf="visability">
+          <ion-label>{{ 'ACTIVATE_COUNTRY_OF_BIRTH_LABEL_STATE' | translate }}</ion-label>
+          <ion-select [(ngModel)]="state" name="state" placeholder="Seleccionar" (ngModelChange)="onChange($event)" >
+              <ion-option value="1">Aguascalientes</ion-option>              
+              <ion-option value="2">Baja California</ion-option>              
+              <ion-option value="3">Baja California Sur</ion-option>              
+              <ion-option value="4">Campeche</ion-option>              
+              <ion-option value="5">Coahuila de Zaragoza</ion-option>              
+              <ion-option value="6">Colima</ion-option>              
+              <ion-option value="7">Chiapas</ion-option>              
+              <ion-option value="8">Chihuahua</ion-option>              
+              <ion-option value="9">Distrito Federal</ion-option>              
+              <ion-option value="10">Durango</ion-option>              
+              <ion-option value="11">Guanajuato</ion-option>              
+              <ion-option value="12">Guerrero</ion-option>              
+              <ion-option value="13">Hidalgo</ion-option>              
+              <ion-option value="14">Jalisco</ion-option>              
+              <ion-option value="15">México</ion-option>              
+              <ion-option value="16">Michoacán de Ocampo</ion-option>              
+              <ion-option value="17">Morelos</ion-option>              
+              <ion-option value="18">Nayarit</ion-option>              
+              <ion-option value="19">Nuevo León</ion-option>              
+              <ion-option value="20">Oaxaca</ion-option>              
+              <ion-option value="21">Puebla</ion-option>              
+              <ion-option value="22">Querétaro</ion-option>              
+              <ion-option value="23">Quintana Roo</ion-option>              
+              <ion-option value="24">San Luis Potosí</ion-option>              
+              <ion-option value="25">Sinaloa</ion-option>              
+              <ion-option value="26">Sonora</ion-option>              
+              <ion-option value="27">Tabasco</ion-option>              
+              <ion-option value="28">Tamaulipas</ion-option>              
+              <ion-option value="29">Tlaxcala</ion-option>              
+              <ion-option value="30">Veracruz de Ignacio de la Llave</ion-option>              
+              <ion-option value="31">Yucatán</ion-option>              
+              <ion-option value="32">Zacatecas</ion-option>                     
+          </ion-select>
+      </ion-item>
+      
+      <div padding>
+        <button ion-button color="primary" block [disabled]="checkedbtn" name="continue">{{ 'NEXT' | translate }}</button>        
+      </div>
+      <div text-center padding>
+      <u>{{ 'LATER' | translate }}</u>
+      </div>
+
+    </ion-list>
+  </form>
+
+  
+
+</ion-content>

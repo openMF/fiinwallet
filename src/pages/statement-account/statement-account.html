@@ -1,0 +1,97 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-title text-center>
+      <div class="logo logo--header">
+        <img [src]="coin.imageUrl">
+      </div>
+    </ion-title>
+  </ion-navbar>
+  <ion-toolbar class="toolbar-header">
+    <div class="coin-price" text-center>
+      <div class="price">
+        <div class="currency">
+          <span class="currency__symbol">{{coin.currency.symbol}}</span>
+          <span class="currency__number">{{coin.price | numberFormatter: 'price'}}</span>
+        </div>
+      </div>
+    </div>
+  </ion-toolbar>
+  <ion-toolbar class="toolbar-header">
+    <ion-grid class="grid-skewed">
+      <ion-row>
+        <ion-col col-6 class="grid-skewed_first">
+          <ion-label>
+            {{coin.name}}
+          </ion-label>
+        </ion-col>
+        <ion-col col-6 class="grid-skewed_last">
+          <!-- TODO: fix formatting -->
+          <div text-center class="price-change" [ngClass]="{'negative' : detectChange(coin.change)}">
+            <svg
+              viewBox="0 0 13 11"
+              class="delta"
+              [ngClass]="{'negative' : detectChange(coin.change)}"
+              version="1.1" xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Triangle</title>
+              <defs></defs>
+              <g id="Coin-row" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+                 transform="translate(-344.000000, -41.000000)">
+                <polygon id="Triangle" stroke="#4EB92E" stroke-width="2" points="350.5 43 355 51 346 51"></polygon>
+              </g>
+            </svg>
+            <div class="percentage">
+              <span class="percentage__number">{{coin.change | numberFormatter: 'perc'}}</span>
+              <span class="percentage__symbol">%</span>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+  <ion-toolbar class="toolbar-header">
+    <ion-grid class="coin-market-cap">
+      <ion-row>
+        <ion-col>
+          <small>
+            Market cap
+          </small>
+        </ion-col>
+        <ion-col text-right>
+          <small>
+            {{coin.currency.symbol}} {{coin.marketcap | numberFormatter}}
+          </small>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div #segment class="chart-segment">
+    <ion-segment [(ngModel)]="chartMode" (ionChange)="chartModeChanged($event)">
+      <ion-segment-button value="day">
+        D
+      </ion-segment-button>
+      <ion-segment-button value="week">
+        W
+      </ion-segment-button>
+      <ion-segment-button value="month">
+        M
+      </ion-segment-button>
+      <ion-segment-button value="year">
+        Y
+      </ion-segment-button>
+      <ion-segment-button value="all">
+        All
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div #timestamp class="chart-timestamp" text-center><span class="date">{{priceDate}}</span></div>
+  <!--<div class="chart-wrapper">-->
+  <!--TODO Fix api with subclassing-->
+  <!--<ngx-chart [data]="data" (price)="updatePrice($event)" (date)="updateDate($event)"></ngx-chart>-->
+  <chartjs [data]="data" (price)="updatePrice($event)" (date)="updateDate($event)"
+           [style.height]="calculateChartHeight"></chartjs>
+  <!--</div>-->
+</ion-content>

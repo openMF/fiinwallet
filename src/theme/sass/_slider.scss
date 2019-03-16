@@ -1,0 +1,12 @@
+.swiper-pagination {
+  top: 0;
+}
+
+.swiper-pagination-bullet {
+  background: map-get($colors, secondary-dark);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: map-get($colors, primary);
+}

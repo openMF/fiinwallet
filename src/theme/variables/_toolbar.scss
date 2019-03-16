@@ -1,0 +1,21 @@
+$toolbar-ios-padding: 0;
+$toolbar-md-padding: 0;
+$toolbar-wp-padding: 0;
+$toolbar-background: map-get($colors, secondary);
+$toolbar-ios-title-font-size: 2rem;
+$toolbar-md-title-font-size: 2rem;
+$toolbar-wp-title-font-size: 2rem;
+$toolbar-ios-title-text-color: $text-color;
+$toolbar-md-title-text-color: $text-color;
+$toolbar-wp-title-text-color: $text-color;
+$toolbar-ios-title-font-weight: 100;
+$toolbar-wp-title-font-weight: 100;
+
+$button-ios-text-color: $text-color;
+$toolbar-ios-height: 50px;
+
+$toolbar-ios-title-text-color: $text-color;
+$toolbar-ios-button-color: $toolbar-ios-title-text-color;
+
+$toolbar-ios-active-color: $text-color;
+

@@ -1,0 +1,95 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-title>
+      <ng-container *ngIf="!search; else wallet">
+        {{ 'DASHBOARD_TITLE' | translate }}
+      </ng-container>
+      <ng-template #wallet>
+        {{ 'DASHBOARD_TITLE_INITIAL' | translate }}
+      </ng-template>
+    </ion-title>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="listView" (ionChange)="listChanged($event)" color="primary-dark">
+      <ion-segment-button class="button-skewed" value="favorites" [ngClass]="{'active': listView === 'favorites'}">
+        {{ 'DASHBOARD_TAB_FAVS' | translate }}
+      </ion-segment-button>
+      <ion-segment-button class="button-skewed--inverse" value="coins" [ngClass]="{'active': listView === 'coins'}">
+        {{ 'DASHBOARD_TAB_ALL' | translate }}
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <ion-toolbar class="sort-custom">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+          <ion-select
+            [style.visibility]="listHasCoins()"
+            [(ngModel)]="sorter"
+            [interface]="'action-sheet'"
+            (ionChange)="sorterChanged($event)">
+            <ion-option #item *ngFor="let sorter of sorters" [value]="sorter.value">{{sorter.name}}</ion-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-spinner class="big-loader" name="crescent" *ngIf="isCoinsView() && isLoading"></ion-spinner>
+  <ion-refresher *ngIf="isCoinsView()" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="Pull to refresh"
+                           refreshingSpinner="crescent"
+                           refreshingText="Refreshing..."></ion-refresher-content>
+  </ion-refresher>
+  <ion-searchbar [(ngModel)]="searchTerm" *ngIf="isCoinsView()"
+                 (ionInput)="filterCoinsOnSearch($event)"></ion-searchbar>
+  <ion-list [virtualScroll]="list" [approxItemHeight]="'70px'"
+            [approxItemWidth]="'100%'" [virtualTrackBy]="trackByCoin" no-lines>
+    <ion-item-sliding #slidingItem *virtualItem="let coin">
+      <button ion-item #item (click)="selectedCoin(coin)" [ngClass]="{'favorite': coin.favorite}" detail-none>
+        <ion-avatar class="logo" item-start>
+          <img-loader [src]="coin.imageUrl" useImg></img-loader>
+        </ion-avatar>
+        <ion-label>
+          {{coin.name}}
+        </ion-label>
+        <span item-right class="price">
+          <span>{{coin.currency.symbol}} {{coin.price| numberFormatter: 'price'}}</span>
+        </span>
+        <div class="change-icon" item-end>
+          <svg
+            viewBox="0 0 13 11"
+            class="delta"
+            [ngClass]="{'negative' : detectChange(coin.change)}"
+            version="1.1" xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Triangle</title>
+            <defs></defs>
+            <g id="Coin-row" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+               transform="translate(-344.000000, -41.000000)">
+              <polygon id="Triangle" stroke="#4EB92E" stroke-width="2" points="350.5 43 355 51 346 51"></polygon>
+            </g>
+          </svg>
+        </div>
+      </button>
+      <ion-item-options>
+        <button *ngIf="isCoinsView()" ion-button color="tertiary" (click)="addToFavorites(slidingItem, coin)">
+          Favorite
+        </button>
+        <button *ngIf="!isCoinsView()" ion-button color="danger" (click)="removeFromFavorites(slidingItem, coin)">
+          Remove
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  
+  <div *ngIf="!userIsActive" class="empty-list" text-center padding>
+    <img src="./assets/imgs/mono-exit.png" alt="pin">
+    <button ion-button full color="primary" (click)="goToActivateCountryOfBirthPage()">{{ 'DASHBOARD_BUTTON_INITIAL' | translate }}</button>
+  </div>
+</ion-content>

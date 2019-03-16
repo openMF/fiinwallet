@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>{{ 'CELL_PHONE_NUMBER_TITLE' | translate }}</ion-title>
+    </ion-navbar>  
+</ion-header>
+  
+  
+<ion-content>
+    <form (submit)="doActivateAccountLevel1()" >
+      <ion-list>  
+
+        <ion-item>
+            {{ 'CELL_PHONE_NUMBER_MESSAGE' | translate }}
+        </ion-item>
+          
+
+        <div text-center padding>
+            <ion-grid>
+                <ion-row>
+                  <ion-col>
+                      <ion-row class="imagewithlabelselect image_{{ account.country }}">
+                          <ion-item>
+                              <ion-label floating>{{ 'COUNTRY' | translate }}</ion-label>
+                              <ion-select [(ngModel)]="account.country" (click)="prepareCountryImageWithLabelSelector()" (ionChange)="setCountryImageWithLabel(this.imagewithlabel)" name="country">
+                                <ion-option *ngFor="let country of countries" [value]="country.cca2" >{{ country.cca2 }} - {{ country.name.common }}</ion-option>
+                              </ion-select>
+                            </ion-item>
+                      </ion-row>
+                  </ion-col>                  
+                </ion-row>
+              </ion-grid>        
+        </div> 
+
+        <ion-item>
+          <ion-label floating>{{ 'CELL_PHONE_NUMBER_LABEL' | translate }}</ion-label>
+          <ion-input type="tel"[(ngModel)]="phonenumber" name="phonenumber" name="phonenumber" maxlength=“10” (input)="onTextInput($event)"></ion-input>
+        </ion-item>              
+        
+        <div padding>
+          <button ion-button color="primary" block [disabled]="checkedbtn" name="continue">{{ 'ACTIVATE_BUTTON' | translate }}</button>
+        </div>
+  
+      </ion-list>
+    </form>
+  
+  </ion-content>

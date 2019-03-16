@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>{{ 'OCUPPATION_TITLE' | translate }}</ion-title>
+    </ion-navbar>  
+  </ion-header>
+  <ion-content>      
+  
+   
+    <form (submit)="doActivateCustomerMobilePhone()" >
+        <ion-list radio-group name="occupation">
+
+            <ion-list-header>
+                {{ 'OCUPPATION_LABEL' | translate }}
+            </ion-list-header>
+            <ion-item>
+                <ion-label><small>{{ 'OCUPPATION_MESSAGE' | translate }}</small></ion-label>        
+            </ion-item>
+            <ion-item>
+              <ion-label>{{ 'OCUPPATION_1' | translate }}</ion-label>
+              <ion-radio value="wageearner" (ionSelect)="select($event)"></ion-radio>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label>{{ 'OCUPPATION_2' | translate }}</ion-label>
+              <ion-radio value="publicservant" (ionSelect)="select($event)"></ion-radio>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label>{{ 'OCUPPATION_3' | translate }}</ion-label>
+              <ion-radio value="enterpreneur" (ionSelect)="select($event)"></ion-radio>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label>{{ 'OCUPPATION_4' | translate }}</ion-label>
+              <ion-radio value="independent" (ionSelect)="select($event)"></ion-radio>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label>{{ 'OCUPPATION_5' | translate }}</ion-label>
+              <ion-radio value="association" (ionSelect)="select($event)"></ion-radio>
+            </ion-item>          
+          
+            <ion-item>
+              <ion-label>{{ 'OCUPPATION_6' | translate }}</ion-label>
+              <ion-radio value="student" (ionSelect)="select($event)"></ion-radio>
+            </ion-item>          
+
+            <ion-item>
+              <ion-label>{{ 'OCUPPATION_7' | translate }}</ion-label>
+              <ion-radio value="other" (ionSelect)="select($event)"></ion-radio>
+            </ion-item>          
+
+        <div padding>
+          <button ion-button color="primary" block [disabled]="checkedbtn" name="continue">{{ 'NEXT' | translate }}</button>        
+        </div>
+        <div text-center padding>
+        <u>{{ 'LATER' | translate }}</u>
+        </div>  
+      </ion-list>
+    </form>
+  </ion-content>

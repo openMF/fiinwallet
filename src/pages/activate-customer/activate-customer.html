@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ 'ACTIVATE_CUSTOMER_TITLE' | translate }}</ion-title>
+  </ion-navbar>  
+</ion-header>
+
+<ion-content>
+  <br>
+  <br>
+  <form (submit)="doActivateCustomer()" >
+    <ion-list>  
+      
+      <ion-item>
+          <ion-label >{{ 'ACTIVATE_CUSTOMER_LABEL' | translate }}</ion-label>
+      </ion-item>
+
+      <ion-row>            
+          <ion-col col-6>
+            <ion-item>                              
+              <ion-label floating>{{ 'ACTIVATE_CUSTOMER_LABEL_CODE1' | translate }}</ion-label>
+              <ion-input type="tel"[(ngModel)]="requestid" name="requestid" name="requestid" minlength="22" maxlength="10" (input)="onTextInputRequestId($event)"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+            <ion-item class="padding-left-2px">              
+              <ion-label floating>{{ 'ACTIVATE_CUSTOMER_LABEL_CODE2' | translate }}</ion-label>
+              <ion-input type="tel"[(ngModel)]="authenticationtoken" name="authenticationtoken" name="authenticationtoken" minlength="2" maxlength="10" (input)="onTextInputAuthenticationToken($event)"></ion-input>
+            </ion-item>
+          </ion-col>
+      </ion-row>
+      
+      <ion-item>
+        <small>{{ 'ACTIVATE_CUSTOMER_MESSAGE' | translate }}</small>
+      </ion-item>
+
+      <div padding>
+        <button ion-button color="primary" block [disabled]="checkedbtn" name="continue">{{ 'ACTIVATE_BUTTON' | translate }}</button>
+      </div>
+
+    </ion-list>
+  </form>
+
+</ion-content>

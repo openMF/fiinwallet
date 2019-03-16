@@ -1,0 +1,32 @@
+.logo {
+  border-radius: 50%;
+  overflow: hidden;
+  background: map-get($colors, secondary-dark);
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(map-get($colors, secondary), 0.6);
+  }
+
+  img {
+    filter: saturate(60%);
+  }
+}
+
+.logo--header {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}

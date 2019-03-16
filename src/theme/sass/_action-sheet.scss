@@ -1,0 +1,11 @@
+.action-sheet-ios .action-sheet-selected {
+  background: map-get($colors, light);
+}
+
+.action-sheet-ios .action-sheet-button.activated {
+  color: $text-color;
+}
+
+.action-sheet-ios .action-sheet-cancel {
+  color: $text-color;
+}

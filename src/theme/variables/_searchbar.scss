@@ -1,0 +1,9 @@
+$searchbar-ios-background-color: transparent;
+$searchbar-ios-padding-horizontal: 1.7rem;
+$searchbar-ios-input-background-color: $text-color;
+$searchbar-ios-input-text-color: map-get($colors, dark);
+$searchbar-ios-input-search-icon-color: map-get($colors, dark);
+$searchbar-ios-input-clear-icon-color: map-get($colors, dark);
+$searchbar-ios-input-placeholder-color: rgba($searchbar-ios-input-text-color, 0.8);
+//$searchbar-ios-input-height: 4rem;
+//$searchbar-ios-input-search-icon-size: 22px;
