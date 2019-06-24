@@ -1,0 +1,1348 @@
+{
+	"info": {
+		"_postman_id": "7cc517dd-c274-4c39-908d-3601aee87185",
+		"name": "FINERACT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List USERS DETAILS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Fineract-Platform-TenantId",
+						"type": "text",
+						"value": "mobile"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Victor\",\n\t\"salary\": \"0\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8034/user/adduser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8034",
+					"path": [
+						"user",
+						"adduser"
+					]
+				},
+				"description": "Customer"
+			},
+			"response": [
+				{
+					"name": "Customer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Fineract-Platform-TenantId",
+								"value": "default",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Apache-Coyote/1.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "vary",
+							"value": "accept-encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Feb 2019 22:39:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": 1551220758654,\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"exception\": \"java.lang.NullPointerException\",\n    \"message\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "UPDATE USERS DETAILS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Fineract-Platform-TenantId",
+						"value": "mobile",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstname\": \"Victor Manuel\",\n\t\"middlename\": \"Romero\",\n\t\"lastname\": \"Rodriguez\",\n\t\"dateFormat\": \"dd MMMM yyyy\",\n\t\"locale\": \"en\",\n\t\"active\": true,\n\t\"activationDate\": \"12 March 2019\",\n\t\"dateOfBirth\": \"22 March 1981\",\n\t\"genderId\": \"15\"\n}\n\n"
+				},
+				"url": {
+					"raw": "https://mobile.openmf.org/fineract-provider/api/v1/clients/100",
+					"protocol": "https",
+					"host": [
+						"mobile",
+						"openmf",
+						"org"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"clients",
+						"100"
+					]
+				},
+				"description": "Customer"
+			},
+			"response": [
+				{
+					"name": "Customer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Fineract-Platform-TenantId",
+								"value": "default",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Apache-Coyote/1.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "vary",
+							"value": "accept-encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Feb 2019 22:39:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": 1551220758654,\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"exception\": \"java.lang.NullPointerException\",\n    \"message\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "DATA TABLE USERS COUNTRY OF BIRTH",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Fineract-Platform-TenantId",
+						"type": "text",
+						"value": "mobile"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Country\": \"Mexico\",\n\t\"City\": \"Ciudad de Mexico\"\n}"
+				},
+				"url": {
+					"raw": "https://mobile.openmf.org/fineract-provider/api/v1/datatables/Country of Birth/100",
+					"protocol": "https",
+					"host": [
+						"mobile",
+						"openmf",
+						"org"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"datatables",
+						"Country of Birth",
+						"100"
+					]
+				},
+				"description": "Customer"
+			},
+			"response": [
+				{
+					"name": "Customer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Fineract-Platform-TenantId",
+								"value": "default",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Apache-Coyote/1.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "vary",
+							"value": "accept-encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Feb 2019 22:39:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": 1551220758654,\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"exception\": \"java.lang.NullPointerException\",\n    \"message\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "DATA TABLE USERS OCCUPATION",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Fineract-Platform-TenantId",
+						"type": "text",
+						"value": "mobile"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Occupation_cd_Occupation\": \"55\"\n}"
+				},
+				"url": {
+					"raw": "https://mobile.openmf.org/fineract-provider/api/v1/datatables/Occupation/100",
+					"protocol": "https",
+					"host": [
+						"mobile",
+						"openmf",
+						"org"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"datatables",
+						"Occupation",
+						"100"
+					]
+				},
+				"description": "Customer"
+			},
+			"response": [
+				{
+					"name": "Customer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Fineract-Platform-TenantId",
+								"value": "default",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Apache-Coyote/1.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "vary",
+							"value": "accept-encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Feb 2019 22:39:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": 1551220758654,\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"exception\": \"java.lang.NullPointerException\",\n    \"message\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "List Customers Self",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Fineract-Platform-TenantId",
+						"type": "text",
+						"value": "mobile"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://mobile.openmf.org/fineract-provider/api/v1/self/clients/",
+					"protocol": "https",
+					"host": [
+						"mobile",
+						"openmf",
+						"org"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"self",
+						"clients",
+						""
+					]
+				},
+				"description": "Customer"
+			},
+			"response": [
+				{
+					"name": "Customer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Fineract-Platform-TenantId",
+								"value": "default",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:8443/fineract-provider/api/v1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"fineract-provider",
+								"api",
+								"v1"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Apache-Coyote/1.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "vary",
+							"value": "accept-encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Feb 2019 22:39:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": 1551220758654,\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"exception\": \"java.lang.NullPointerException\",\n    \"message\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "List Customers Template",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Fineract-Platform-TenantId",
+						"type": "text",
+						"value": "default"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://demo.openmf.org/fineract-provider/api/v1/clients/template",
+					"protocol": "https",
+					"host": [
+						"demo",
+						"openmf",
+						"org"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"clients",
+						"template"
+					]
+				},
+				"description": "Customer"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Customer",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Fineract-Platform-TenantId",
+						"type": "text",
+						"value": "default"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n           \"officeId\": 1,\n           \"firstname\": \"Victor\",\n           \"lastname\": \"Romero\",\n           \"externalId\": \"786YYH7\",\n           \"dateFormat\": \"dd MMMM yyyy\",\n           \"locale\": \"en\",\n           \"active\": true,\n           \"activationDate\": \"04 March 2009\",\n           \"submittedOnDate\":\"04 March 2009\"\n           }"
+				},
+				"url": {
+					"raw": "https://localhost:8443/fineract-provider/api/v1/clients",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"clients"
+					]
+				},
+				"description": "Customer"
+			},
+			"response": []
+		},
+		{
+			"name": "User Authentication",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Fineract-Platform-TenantId",
+						"value": "mobile",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://mobile.openmf.org/fineract-provider/api/v1/self/authentication?username=victor.romero@fintecheando.mx&password=gusana02",
+					"protocol": "https",
+					"host": [
+						"mobile",
+						"openmf",
+						"org"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"self",
+						"authentication"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "victor.romero@fintecheando.mx"
+						},
+						{
+							"key": "password",
+							"value": "gusana02"
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				},
+				"description": "User Authentication"
+			},
+			"response": []
+		},
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Fineract-Platform-TenantId",
+						"value": "mobile",
+						"type": "text"
+					},
+					{
+						"key": "username",
+						"value": "mifos",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "password",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\"accountNumber\": \"000000079\", \"firstName\": \"MOBILE_NAME\", \"lastName\":\"MOBILE_LASTNAME\",\"mobileNumber\":\"0123456789\",\"username\": \"fintech1552108884217\",\"email\": \"fintech1552108884217@gmail.com\",\"password\": \"Fintech01\",\"authenticationMode\":\"email\" }"
+				},
+				"url": {
+					"raw": "https://mobile.openmf.org/fineract-provider/api/v1/self/registration",
+					"protocol": "https",
+					"host": [
+						"mobile",
+						"openmf",
+						"org"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"self",
+						"registration"
+					]
+				},
+				"description": "Clients"
+			},
+			"response": []
+		},
+		{
+			"name": "POST SELF Registration User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Fineract-Platform-TenantId",
+						"type": "text",
+						"value": "mobile"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"requestId\": \"111\", \"authenticationToken\": \"9607\"}"
+				},
+				"url": {
+					"raw": "https://mobile.openmf.org/fineract-provider/api/v1/self/registration/user",
+					"protocol": "https",
+					"host": [
+						"mobile",
+						"openmf",
+						"org"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"self",
+						"registration",
+						"user"
+					]
+				},
+				"description": "Clients"
+			},
+			"response": []
+		},
+		{
+			"name": "GET SELF Retrieve Client DETAILS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Fineract-Platform-TenantId",
+						"type": "text",
+						"value": "mobile"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic ZmludGVjaDE1NTIxOTYwNDkxNjlAZ21haWwuY29tOkZpbnRlY2gwMQ==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://mobile.openmf.org/fineract-provider/api/v1/self/clients/93",
+					"protocol": "https",
+					"host": [
+						"mobile",
+						"openmf",
+						"org"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"self",
+						"clients",
+						"93"
+					]
+				},
+				"description": "Clients"
+			},
+			"response": []
+		},
+		{
+			"name": "GET SELF FECH USER DETAILS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "fintech1552196049169@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Fintech01",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Fineract-Platform-TenantId",
+						"type": "text",
+						"value": "mobile"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://mobile.openmf.org/fineract-provider/api/v1/self/userdetails",
+					"protocol": "https",
+					"host": [
+						"mobile",
+						"openmf",
+						"org"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"self",
+						"userdetails"
+					]
+				},
+				"description": "Clients"
+			},
+			"response": []
+		},
+		{
+			"name": "Registration User List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Fineract-Platform-TenantId",
+						"type": "text",
+						"value": "mobile"
+					},
+					{
+						"key": "username",
+						"type": "text",
+						"value": "mifos"
+					},
+					{
+						"key": "password",
+						"type": "text",
+						"value": "password"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://mobile.openmf.org/fineract-provider/api/v1/self/registration",
+					"protocol": "https",
+					"host": [
+						"mobile",
+						"openmf",
+						"org"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"self",
+						"registration"
+					]
+				},
+				"description": "Clients"
+			},
+			"response": []
+		},
+		{
+			"name": "Client Creation",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Fineract-Platform-TenantId",
+						"type": "text",
+						"value": "mobile"
+					},
+					{
+						"key": "username",
+						"type": "text",
+						"value": "mifos"
+					},
+					{
+						"key": "password",
+						"type": "text",
+						"value": "password"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"officeId\": 1, \"staffId\": \"8\", \"firstname\": \"MOBILE_NAME\", \"lastname\":\"MOBILE_LASTNAME\",\"externalId\":\"fintech1552527983801@gmail.com\",\"dateFormat\": \"dd MMMM yyyy\",\"locale\": \"en\",\"active\": false,\"submittedOnDate\":\"14 March 2019\", \"savingsProductId\": 2 }"
+				},
+				"url": {
+					"raw": "https://mobile.openmf.org/fineract-provider/api/v1/clients",
+					"protocol": "https",
+					"host": [
+						"mobile",
+						"openmf",
+						"org"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"clients"
+					]
+				},
+				"description": "Client Creation"
+			},
+			"response": []
+		},
+		{
+			"name": "Registration User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Fineract-Platform-TenantId",
+						"type": "text",
+						"value": "default"
+					},
+					{
+						"key": "username",
+						"type": "text",
+						"value": "mifos"
+					},
+					{
+						"key": "password",
+						"type": "text",
+						"value": "password"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\nrequestId:\"1\",\nauthenticationToken: \"2\"\n}"
+				},
+				"url": {
+					"raw": "https://demo.openmf.org/fineract-provider/api/v1/self/registration/user",
+					"protocol": "https",
+					"host": [
+						"demo",
+						"openmf",
+						"org"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"self",
+						"registration",
+						"user"
+					]
+				},
+				"description": "Clients"
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Fineract-Platform-TenantId",
+						"value": "mobile",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://mobile.openmf.org:443/fineract-provider/api/v1/self/authentication?username=victor.romero@fintecheando.mx&password=gusana02",
+					"protocol": "https",
+					"host": [
+						"mobile",
+						"openmf",
+						"org"
+					],
+					"port": "443",
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"self",
+						"authentication"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "victor.romero@fintecheando.mx"
+						},
+						{
+							"key": "password",
+							"value": "gusana02"
+						}
+					]
+				},
+				"description": "LOGIN"
+			},
+			"response": []
+		},
+		{
+			"name": "TEST",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Fineract-Platform-TenantId",
+						"value": "mobile",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://mobile.openmf.org/fineract-provider/api/v1/self/clients/1?fields=id,displayName,officeName",
+					"protocol": "https",
+					"host": [
+						"mobile",
+						"openmf",
+						"org"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"self",
+						"clients",
+						"1"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "id,displayName,officeName"
+						}
+					]
+				},
+				"description": "TEST"
+			},
+			"response": []
+		},
+		{
+			"name": "ACTIVATE CLIENT",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mifos",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Fineract-Platform-TenantId",
+						"value": "mobile",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"locale\": \"en\",\n  \"dateFormat\": \"dd MMMM yyyy\",\n  \"activationDate\": \"13 June 2019\"\n}"
+				},
+				"url": {
+					"raw": "https://mobile.openmf.org/fineract-provider/api/v1/clients/9?command=activate",
+					"protocol": "https",
+					"host": [
+						"mobile",
+						"openmf",
+						"org"
+					],
+					"path": [
+						"fineract-provider",
+						"api",
+						"v1",
+						"clients",
+						"9"
+					],
+					"query": [
+						{
+							"key": "command",
+							"value": "activate"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
