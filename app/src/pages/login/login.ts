@@ -15,8 +15,8 @@ export class LoginPage {
   // If you're using the username field with or without email, make
   // sure to add it to the type
   account: { username: string, password: string } = {
-    username: 'devops@fintecheando.mx',
-    password: 'Fintech01'
+    username: 'selfservice',
+    password: 'password'
   };
 
   userData: any;  
