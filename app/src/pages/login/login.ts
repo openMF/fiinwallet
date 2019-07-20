@@ -15,11 +15,12 @@ export class LoginPage {
   // If you're using the username field with or without email, make
   // sure to add it to the type
   account: { username: string, password: string } = {
-    username: 'devops@fintecheando.mx',
-    password: 'Fintech01'
+    username: 'selfservice',
+    password: 'password'
   };
 
-  userData: any;  
+  userData: any;
+  savingaccounts: any;
 
   //Show/Hide password
   usernameType: string = 'password';
@@ -54,6 +55,8 @@ export class LoginPage {
   doLogin() {
     this.user.login(this.account).subscribe((resp) => {
       this.userData = resp;
+      /*this.user.applySavingsAccount({"clientId":1,"dateFormat":"dd MMMM yyyy","locale":"en","productId":2,"submittedOnDate":"19 July 2019"})
+        .subscribe(res=> this.savingaccounts = resp )*/
       this.navCtrl.push(MainPage, {user: this.userData});
     }, (err) => {
       //this.navCtrl.push(MainPage);
