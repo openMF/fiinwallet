@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <label text-center>Dashboard </label>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <section margin-bottom text-center>
+    <ion-icon name="person"></ion-icon>
+    <h1 no-margin style="font-size:1.4em">Welcome {{displayName}}</h1>/
+  </section>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-card (click)="viewAccounts()" padding text-center>
+          <ion-icon name="card"></ion-icon>
+          <h2>Accounts</h2>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card padding text-center>
+          <ion-icon name="swap"></ion-icon>
+          <h2>Transfer</h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <ion-card padding text-center>
+          <ion-icon name="paper"></ion-icon>
+          <h2>Charges</h2>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card padding text-center>
+          <ion-icon name="logo-usd"></ion-icon>
+          <h2>Apply for Loan</h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <ion-card padding text-center>
+          <ion-icon name="people" ></ion-icon>
+          <h2>Benefeciaries</h2>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card padding text-center>
+          <ion-icon name="clipboard"></ion-icon>
+          <h2>Surveys</h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
