@@ -48,7 +48,7 @@ export class User {
 
     return seq;
   }
-/*
+
 
   applySavingsAccount(userinfo: any) {
     let seq = this.api.post('savingsaccounts', userinfo).share();
@@ -57,10 +57,11 @@ export class User {
     if (res.status == 'success') {
       console.log('Okay, your savings account is applied');
     } else {
-    }});
+    }}, err =>{
+        console.log('ERROR', err)
+    });
     return seq;
   }
-*/
 
   /**
    * Send a POST request to our create endpoint with the data
@@ -149,6 +150,10 @@ export class User {
    */
   logout() {
     this._user = null;
+  }
+
+  userinfo(){
+    return this._user;
   }
 
   /**

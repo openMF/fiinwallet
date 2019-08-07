@@ -78,6 +78,7 @@ export class SignupPage {
           text: this.nameAlertTextConfirm,
           handler: () => {
             console.log('CONFIRMAR clicked');
+            console.log('trying to open signup page')
             // Attempt to create the user in through our User service
             this.user.create(this.account).subscribe((resp) => {
               this.navCtrl.push('ActivateCustomerPage');

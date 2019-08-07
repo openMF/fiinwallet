@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AccountsPage} from "../accounts/accounts";
+import { User } from "../../providers";
 
 /**
  * Generated class for the SummaryPage page.
@@ -20,19 +20,20 @@ export class SummaryPage {
   client: any={};
   displayName: String="";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public user: User) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SummaryPage');
-    this.userdata = this.navParams.get('user');
-    //console.log(this.userdata);
-    //this.client = this.navParams.get('savingaccounts');
-    //console.log(this.client);
+    this.userdata = this.user.userinfo();
+    console.log(this.userdata);
     this.displayName = this.userdata.user.firstname +" "+ this.userdata.user.lastname;
   }
   viewAccounts(){
-   //set this.navCtrl.push(AccountsPage,{user:this.userdata});
+    this.navCtrl.push('accounts');
     console.log("opening accounts page");
+  }
+  viewBenefeciaries(){
+    this.navCtrl.push('beneficiaries')
   }
 }

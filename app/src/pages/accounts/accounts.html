@@ -8,8 +8,41 @@
   <ion-navbar>
     <ion-title>Accounts</ion-title>
   </ion-navbar>
+
+<ion-toolbar>
+  <ion-segment [(ngModel)]="default">
+    <ion-segment-button value="savings">
+      Savings
+    </ion-segment-button>
+    <ion-segment-button color="light" value="loan">
+      Loan
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <div (tabChanged)="onTabChanged($event)" [currentTab]="default" [ngSwitch]="default" [tabsList]="categories" class="swipe-area" swipe-segment>
+    <ion-list *ngSwitchCase="'savings'" >
+      <ion-list *ngFor="let x of savingsAccounts">
+        <ion-card padding="5%" padding-left="10%">
+          <ion-card-title>{{ x.accountNo }}</ion-card-title>
+          {{x.savingsProductName}}
+        </ion-card>
+      </ion-list>
+      <button (click)="applySavingsAccount()" class="button-float" fab fab-bottom fab-right>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-list>
 
+    <ion-list *ngSwitchCase="'loan'">
+      <ion-list *ngFor="let y of loanAccounts">
+        <ion-card padding="5%" padding-left="10%">
+          <ion-card-title>{{ y.accountNo }}</ion-card-title>
+          {{y.savingsProductName}}
+        </ion-card>
+      </ion-list>
+    </ion-list>
+
+  </div>
 </ion-content>
