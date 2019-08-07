@@ -21,7 +21,7 @@ export class ActivateCustomerPage {
 
   constructor(public navCtrl: NavController, 
     public toastCtrl: ToastController,
-    public user: User, 
+    public user: User,
     public navParams: NavParams,
     public translateService: TranslateService) {
       this.translateService.get('SIGNUP_ERROR').subscribe((value) => {

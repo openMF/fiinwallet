@@ -1,0 +1,19 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Beneficiaries</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngFor="let x of beneficiaries">
+    <ion-card padding="5%" padding-left="10%">
+      <ion-card-title>{{ x.accountNo }}</ion-card-title>
+      {{ x.clientName }}
+    </ion-card>
+  </ion-list>
+
+  <button (click)="addBeneficiary()" class="button-float" fab fab-bottom fab-right>
+    <ion-icon name="add"></ion-icon>
+  </button>
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>ApplySavingsAc</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card padding>
+    <div class="row"><div class="col col-50">Client Name</div><div class="col col-50">{{ clientName }}</div></div>
+    <div class="row"><div class="col col-50">Submission Date</div><div class="col col-50">{{ today | date: 'dd/MM/yyyy' }}</div></div>
+  </ion-card>
+  <div padding>Select product Id</div>
+  <ion-item>
+    <ion-label>Account Type</ion-label>
+    <ion-select>
+      <ion-option value="vol-savings">Voluntary Savings</ion-option>
+      <ion-option value="fiinwallet">FIINWALLET</ion-option>
+    </ion-select>
+  </ion-item>
+  <button (click)="submitApplication()" ion-button round solid> Submit </button>
+</ion-content>

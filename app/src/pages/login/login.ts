@@ -15,8 +15,8 @@ export class LoginPage {
   // If you're using the username field with or without email, make
   // sure to add it to the type
   account: { username: string, password: string } = {
-    username: 'selfservice',
-    password: 'password'
+    username: 'victor.romero@fintecheando.mx',
+    password: 'gusana02'
   };
 
   userData: any;
@@ -55,9 +55,10 @@ export class LoginPage {
   doLogin() {
     this.user.login(this.account).subscribe((resp) => {
       this.userData = resp;
-      /*this.user.applySavingsAccount({"clientId":1,"dateFormat":"dd MMMM yyyy","locale":"en","productId":2,"submittedOnDate":"19 July 2019"})
-        .subscribe(res=> this.savingaccounts = resp )*/
-      this.navCtrl.push(MainPage, {user: this.userData});
+      //this.user.applySavingsAccount({"clientId":1,"dateFormat":"dd MMMM yyyy","locale":"en","productId":2,"submittedOnDate":"19 July 2019"})
+        //.subscribe(res=> this.savingaccounts = resp )
+      console.log(this.userData);
+      this.navCtrl.push(MainPage);
     }, (err) => {
       //this.navCtrl.push(MainPage);
       // Unable to log in
