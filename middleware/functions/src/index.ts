@@ -355,6 +355,10 @@ app.post('/login', (req, res) => {
 
 
 /*
+ADD IN THIS SECTION ANY CALL TO THE FINERACT API REST 
+*/
+
+/*
 // Login an existing User
 app.post('/login', (req, res) => {
   console.log("email ",req.body.email);
