@@ -36,8 +36,8 @@ export class BeneficiariesPage {
   }
 
 
-  fetchBeneficiaries() {
+  fetchBeneficiaries() {}
 
-  }
+
 }
 
