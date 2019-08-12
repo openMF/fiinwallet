@@ -64,6 +64,7 @@ const  REGISTRATION = "registration";
 const  CLIENTS = "clients";
 const  USER = "users";
 const  DATATABLES = "datatables";
+const  BENEFICIARIES = "beneficiaries";
 
 /*
 //Gender Codes as per Mifos Configuration Module
@@ -107,16 +108,14 @@ const user: {
   message: ""
 };
 
-/*
+
 const  SAVINGS_ACCOUNTS = "savingsaccounts";
 const  RECURRING_ACCOUNTS = "recurringdepositaccounts";
 const  SEARCH = "search";
-const  BENEFICIARIES = "beneficiaries";
 const  ACCOUNT_TRANSFER = "accounttransfers";
 const  DOCUMENTS = "documents";
 const  TWOFACTOR = "twofactor";
 const  RUN_REPORT = "runreports";
-*/
 
 //BASE API PATH
 const instance = axios.create({
@@ -357,7 +356,69 @@ app.post('/login', (req, res) => {
 /*
 ADD IN THIS SECTION ANY CALL TO THE FINERACT API REST 
 */
+app.post('/transfertemplate', (req, res) => {
+  instanceSelf.defaults.headers.common["Authorization"] = 'Basic '+req.body.key;
+  instanceSelf.get(ACCOUNT_TRANSFER+"/"+"template")
+  .then(function (response) {
+    res.json(response).send();   
+  })  
 
+app.post('/getsatransactions', (req, res) => {
+  instanceSelf.defaults.headers.common["Authorization"] = 'Basic '+req.body.key;
+  instanceSelf.get(SAVINGS_ACCOUNTS+'/'+ req.body.id + '?'+'associations=transactions')
+  .then(function (response) {
+    res.json(response).send();
+  })
+} )
+
+app.post('/getsacharges' , (req, res) =>{
+  instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+req.body.key;
+  instanceSelf.get(SAVINGS_ACCOUNTS+'/'+req.body.id + '/'+ 'charges')
+  .then( function(response) {
+    res.json(response).send();
+  } )
+} )
+
+
+app.post('/gettpttemplate', (req, res) => {
+  instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+req.body.key;
+  instanceSelf.get(SAVINGS_ACCOUNTS + '/template?type=tpt')
+  .then( function(response) {
+    res.json(response).send();
+  } )
+} )
+
+app.post('/getptbeneficiary', (req, res) => {
+  instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+req.body.key;
+  instanceSelf.get(BENEFICIARIES+'/tpt')
+  .then( function(response) {
+    res.json(response).send();
+  })
+} )
+
+app.post('/maketransfer', (req, res) => {
+  instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+req.body.key;
+  instanceSelf.post(ACCOUNT_TRANSFER, req.body.data)
+  .then( function(response) {
+    res.json(response).send();
+  })
+} )
+
+app.post('/maketpttransfer', (req, res)=> {
+  instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+req.body.key;
+  instanceSelf.post(ACCOUNT_TRANSFER+'?type=tpt', req.body.data)
+  .then( function(response) {
+    res.json(response).send();
+  })
+} )
+
+app.post('/addbenefeciary', (req, res) => {
+  instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+ req.body.key;
+  instanceSelf.post(BENEFICIARIES+'/tpt', req.body.data)
+  .then( function(response) {
+    res.json(response).send();
+  })
+})
 /*
 // Login an existing User
 app.post('/login', (req, res) => {
@@ -377,6 +438,7 @@ app.get('/users', (req, res) => {
 })
 
 // Add new bank
+// tslint:disable-next-line: no-shadowed-variable
 app.post('/banks', (req, res) => {
     firebaseHelper.firestore
     .createNewDocument(db, banksCollection, req.body);
@@ -405,6 +467,7 @@ app.get('/banks', (req, res) => {
 })
 
 // Delete a bank 
+// tslint:disable-next-line: no-shadowed-variable
 app.delete('/banks/:bankId', (req, res) => {
     firebaseHelper.firestore
         .deleteDocument(db, banksCollection, req.params.bankId);
