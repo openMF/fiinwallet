@@ -108,14 +108,13 @@ const user: {
   message: ""
 };
 
-
-const  SAVINGS_ACCOUNTS = "savingsaccounts";
-const  RECURRING_ACCOUNTS = "recurringdepositaccounts";
-const  SEARCH = "search";
 const  ACCOUNT_TRANSFER = "accounttransfers";
+const  SAVINGS_ACCOUNTS = "savingsaccounts";
+/*const  RECURRING_ACCOUNTS = "recurringdepositaccounts";
+const  SEARCH = "search";
 const  DOCUMENTS = "documents";
 const  TWOFACTOR = "twofactor";
-const  RUN_REPORT = "runreports";
+const  RUN_REPORT = "runreports";*/
 
 //BASE API PATH
 const instance = axios.create({
@@ -360,22 +359,24 @@ app.post('/transfertemplate', (req, res) => {
   instanceSelf.defaults.headers.common["Authorization"] = 'Basic '+req.body.key;
   instanceSelf.get(ACCOUNT_TRANSFER+"/"+"template")
   .then(function (response) {
-    res.json(response).send();   
-  })  
+    res.json({"data": response.data}).send();
+    //console.log('Trying to get transfer template');
+    //console.log(response.data);   
+  })})
 
 app.post('/getsatransactions', (req, res) => {
   instanceSelf.defaults.headers.common["Authorization"] = 'Basic '+req.body.key;
   instanceSelf.get(SAVINGS_ACCOUNTS+'/'+ req.body.id + '?'+'associations=transactions')
   .then(function (response) {
-    res.json(response).send();
+    res.json({"data": response.data}).send();
   })
-} )
+})
 
 app.post('/getsacharges' , (req, res) =>{
   instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+req.body.key;
   instanceSelf.get(SAVINGS_ACCOUNTS+'/'+req.body.id + '/'+ 'charges')
   .then( function(response) {
-    res.json(response).send();
+    res.json({"data": response.data}).send();
   } )
 } )
 
@@ -384,7 +385,7 @@ app.post('/gettpttemplate', (req, res) => {
   instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+req.body.key;
   instanceSelf.get(SAVINGS_ACCOUNTS + '/template?type=tpt')
   .then( function(response) {
-    res.json(response).send();
+    res.json({"data": response.data}).send();
   } )
 } )
 
@@ -392,7 +393,7 @@ app.post('/getptbeneficiary', (req, res) => {
   instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+req.body.key;
   instanceSelf.get(BENEFICIARIES+'/tpt')
   .then( function(response) {
-    res.json(response).send();
+    res.json({"data": response.data}).send();
   })
 } )
 
@@ -400,7 +401,7 @@ app.post('/maketransfer', (req, res) => {
   instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+req.body.key;
   instanceSelf.post(ACCOUNT_TRANSFER, req.body.data)
   .then( function(response) {
-    res.json(response).send();
+    res.json({"data": response.data}).send();
   })
 } )
 
@@ -408,7 +409,7 @@ app.post('/maketpttransfer', (req, res)=> {
   instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+req.body.key;
   instanceSelf.post(ACCOUNT_TRANSFER+'?type=tpt', req.body.data)
   .then( function(response) {
-    res.json(response).send();
+    res.json({"data": response.data}).send();
   })
 } )
 
@@ -416,7 +417,7 @@ app.post('/addbenefeciary', (req, res) => {
   instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+ req.body.key;
   instanceSelf.post(BENEFICIARIES+'/tpt', req.body.data)
   .then( function(response) {
-    res.json(response).send();
+    res.json({"data": response.data}).send();
   })
 })
 /*
