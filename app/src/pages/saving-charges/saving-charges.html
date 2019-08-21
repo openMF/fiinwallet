@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>SavingCharges</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngFor="let x of charges">
+    <ion-card padding="5%" padding-left="10%">
+      <ion-label>{{ x.name }}</ion-label>
+      <ion-card-title>{{ x.cuurency.displaySymbol }}{{ x.amount }}</ion-card-title>
+      Amount Outstanding:{{ x.amountOutstanding }}
+    </ion-card>
+  </ion-list>
+</ion-content>
