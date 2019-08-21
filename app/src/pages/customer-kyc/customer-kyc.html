@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>CustomerKyc</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="row">
+    <div class="col col-50">
+      <ion-item>
+        <ion-label floating>First Name</ion-label>
+        <ion-input type="text" [(ngModel)]="kycDetails.firstName" name="firstname"></ion-input>
+      </ion-item>
+    </div>
+    <div class="col col50">
+      <ion-item>
+        <ion-label floating>Last Name</ion-label>
+        <ion-input type="text" [(ngModel)]="kycDetails.lastName" name="lastname"></ion-input>
+      </ion-item>
+    </div>
+  </div>
+
+  <ion-item padding-left>
+    <ion-label>Gender</ion-label>
+    <ion-select [(ngModel)]="kycDetails.gender">
+      <ion-option value="male">Male</ion-option>
+      <ion-option value="female">Female</ion-option>
+      <ion-option value="other">Other</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Date of Birth</ion-label>
+    <ion-datetime displayFormat="DD-MM-YYYY" placeholder="Select Date" [(ngModel)]="kycDetails.dob"></ion-datetime>
+  </ion-item>
+
+
+  <ion-card padding="">
+    <label>Photo ID Card</label>
+    <div class="row">
+      <div class="col col-50">
+    <button ion-button (click)="takePhoto('id')" full color="primary">Take Photo</button>
+    <button ion-button (click)="getImage('id')" full color="secondary">Gallery</button>
+    </div>
+    <div class="col col-50" margin>
+      <img src="{{ idPic }}">
+    </div>
+    </div>
+  </ion-card>
+
+  <ion-card padding>
+    <label>Your Selfie</label>
+    <div class="row">
+      <div class="col col-50">
+      <button ion-button (click)="takePhoto('selfie')" full color="primary">Take Photo</button>
+      <button ion-button (click)="getImage('selfie')" full color="secondary">Gallery</button>
+    </div>
+    <div class="col col-50" margin>
+      <img src="{{ userPic }}">
+    </div>
+    </div>
+  </ion-card>
+
+  <button align-items-center (click)="submitKyc()" ion-button>Submit</button>
+</ion-content>
