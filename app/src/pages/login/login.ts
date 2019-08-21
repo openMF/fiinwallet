@@ -57,10 +57,11 @@ export class LoginPage {
       this.userData = resp;
       //this.user.applySavingsAccount({"clientId":1,"dateFormat":"dd MMMM yyyy","locale":"en","productId":2,"submittedOnDate":"19 July 2019"})
         //.subscribe(res=> this.savingaccounts = resp )
-      console.log(this.userData);
+      console.log('here is',this.userData);
       this.navCtrl.push(MainPage);
     }, (err) => {
-      //this.navCtrl.push(MainPage);
+      //TODO: remove after  testing purposes
+      //this.navCtrl.push('scan-qr');
       // Unable to log in
       let toast = this.toastCtrl.create({
         message: this.loginErrorString,

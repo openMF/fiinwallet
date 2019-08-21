@@ -13,6 +13,7 @@ import { Api } from '../api/api';
 export class SelfServiceProvider {
 
   _beneficiaries: any;
+  _saCharges: any;
 
   constructor(public api: Api) { }
 
@@ -33,8 +34,20 @@ export class SelfServiceProvider {
     return seq;
   }
 
-  getSAChanges(){
+  getSAChanges(userinfo: any){
+    console.log('Trying to get the list of savings charges');
+    let seq = this.api.post('getsacharges', userinfo).share();
 
+    seq.subscribe((res: any)=> {
+      if (res.data) {
+        console.log('yepp got the charges on your mark');
+        this._saCharges = res.data;
+      } else {
+      }
+    }, err=>{
+      console.log('Error in sa charges call', err);
+      });
+    return seq;
   }
 
 

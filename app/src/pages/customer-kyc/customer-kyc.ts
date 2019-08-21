@@ -29,6 +29,7 @@ export class CustomerKycPage {
   submitKyc() {
     console.log("Submit button clicked");
     console.log(this.kycDetails);
+    this.navCtrl.push('activate-customer')
   }
 
   takePhoto(type: string) {

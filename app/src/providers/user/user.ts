@@ -26,6 +26,7 @@ import { Api } from '../api/api';
 @Injectable()
 export class User {
   _user: any;
+  _beneficiaries: any;
 
   constructor(public api: Api) { }
 
@@ -49,6 +50,21 @@ export class User {
     return seq;
   }
 
+  /*getTptBeneficiary(userinfo: any){
+    console.log('Trying to get the list of third party beneficiaries');
+    let seq = this.api.post('getptbeneficiary', userinfo).share();
+
+
+    seq.subscribe((res: any) => {
+      if (res.data) {
+        console.log('Fetched the list of beneficiaries', res.data);
+        this._beneficiaries = res.data;
+      } else {}
+    }, err=> {
+      console.log(' The Error is ', err);
+    });
+    return seq;
+  }*/
 
   applySavingsAccount(userinfo: any) {
     let seq = this.api.post('savingsaccounts', userinfo).share();
@@ -156,6 +172,10 @@ export class User {
     return this._user;
   }
 
+  /*listBeneficiaries(){
+    return this._beneficiaries;
+  }
+*/
   /**
    * Process a login/signup response to store user data
    */

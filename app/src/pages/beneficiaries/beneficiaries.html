@@ -8,7 +8,8 @@
 <ion-content padding>
   <ion-list *ngFor="let x of beneficiaries">
     <ion-card padding="5%" padding-left="10%">
-      <ion-card-title>{{ x.accountNo }}</ion-card-title>
+      <ion-label>{{ x.name }}</ion-label>
+      <ion-card-title>{{ x.accountNumber }}</ion-card-title>
       {{ x.clientName }}
     </ion-card>
   </ion-list>
