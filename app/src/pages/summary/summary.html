@@ -19,7 +19,7 @@
         </ion-card>
       </ion-col>
       <ion-col col-6>
-        <ion-card padding text-center>
+        <ion-card padding text-center (click)="openTransferPage()">
           <ion-icon name="swap"></ion-icon>
           <h2>Transfer</h2>
         </ion-card>
@@ -27,13 +27,13 @@
     </ion-row>
     <ion-row>
       <ion-col col-6>
-        <ion-card padding text-center>
+        <ion-card padding text-center (click)="viewCharges()">
           <ion-icon name="paper"></ion-icon>
           <h2>Charges</h2>
         </ion-card>
       </ion-col>
       <ion-col col-6>
-        <ion-card padding text-center>
+        <ion-card padding text-center (click)="openLoanApply()">
           <ion-icon name="logo-usd"></ion-icon>
           <h2>Apply for Loan</h2>
         </ion-card>

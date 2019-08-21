@@ -36,4 +36,19 @@ export class SummaryPage {
   viewBenefeciaries(){
     this.navCtrl.push('beneficiaries')
   }
+
+  openTransferPage(){
+    console.log('Transfer page clicked');
+  }
+
+  viewCharges(){
+    console.log('Charges Page clicked');
+
+    this.navCtrl.push('saving-charges');
+  }
+
+  openLoanApply(){
+    console.log('Opening loan apply page');
+    alert('Sorry, You are not eligible currently');
+  }
 }

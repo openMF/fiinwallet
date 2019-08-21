@@ -81,7 +81,13 @@ export class SignupPage {
             console.log('trying to open signup page')
             // Attempt to create the user in through our User service
             this.user.create(this.account).subscribe((resp) => {
-              this.navCtrl.push('ActivateCustomerPage');
+              this.navCtrl.push('customer-kyc');
+              let toast = this.toastCtrl.create({
+                message: "Please complete the KYC in order to proceed",
+                duration: 3000,
+                position: 'top'
+              });
+              toast.present();
             }, (err) => {
               //this.navCtrl.push('ActivateCustomerPage');
               // Unable to sign up

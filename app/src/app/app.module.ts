@@ -8,6 +8,7 @@ import { IonicStorageModule, Storage } from '@ionic/storage';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { BarcodeScanner } from "@ionic-native/barcode-scanner/ngx";
 
 import { Items } from '../mocks/providers/items';
 import { Settings, User, Api } from '../providers';
@@ -20,6 +21,7 @@ import {ApiService} from "../services/api.service";
 import {IonicImageLoader} from "ionic-image-loader";
 import {WebsocketService} from "../services/websocket.service";
 import {SocketIoConfig, SocketIoModule} from "ng-socket-io";
+import { SelfServiceProvider } from '../providers/self-service/self-service';
 
 const config: SocketIoConfig = {url: 'wss://streamer.cryptocompare.com'};
 
@@ -75,12 +77,15 @@ export function provideSettings(storage: Storage) {
     ApiService,
     WebsocketService,
     User,
+    SelfServiceProvider,
     Camera,
     SplashScreen,
+    BarcodeScanner,
     StatusBar,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    SelfServiceProvider
   ]
 })
 export class AppModule { }

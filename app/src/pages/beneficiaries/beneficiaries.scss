@@ -2,7 +2,7 @@ page-beneficiaries {
   .button-float{
     z-index: 12;
     box-shadow: 0 2px 5px 0 gainsboro;
-    position: fixed;
+    position: fixed !important;
     background: #46a4da;
     bottom: 15px;
     right: 15px;

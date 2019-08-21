@@ -10,7 +10,9 @@ import { TranslateService } from '@ngx-translate/core';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({
+  name:'activate-customer'
+})
 @Component({
   selector: 'page-activate-customer',
   templateUrl: 'activate-customer.html',
