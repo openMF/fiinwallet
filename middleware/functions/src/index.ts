@@ -32,9 +32,10 @@ app.use(cors({
     // (like mobile apps or curl requests)
     if(!origin) return callback(null, true);
     if(allowedOrigins.indexOf(origin) === -1){
-      const msg = 'The CORS policy for this site does not ' +
-                'allow access from the specified Origin.';
-      return callback(new Error(msg), false);
+      //const msg = 'The CORS policy for this site does not ' +
+      //          'allow access from the specified Origin.';
+      //TODO: Please change below to return callback(new Error(msg), false);
+      return callback(null, true);
     }
     return callback(null, true);
   }
@@ -86,7 +87,7 @@ const  MOBILE_NUMBER = "0123456789";
 //IDs Office
 const OFFICE_ID =1;
 const WALLET_SAVINGS_PRODUCT_ID = 1; //165
-const STAFF_ID = 2;//MOBILE ASSISTANT
+const STAFF_ID = 1;//MOBILE ASSISTANT cuurently changed to R SMITH
 
 const user: {
   status: string,
@@ -110,6 +111,8 @@ const user: {
 
 const  ACCOUNT_TRANSFER = "accounttransfers";
 const  SAVINGS_ACCOUNTS = "savingsaccounts";
+const LOANS = "loans";
+const TEMPLATE = "template";
 /*const  RECURRING_ACCOUNTS = "recurringdepositaccounts";
 const  SEARCH = "search";
 const  DOCUMENTS = "documents";
@@ -141,7 +144,7 @@ export const webApi = functions.https.onRequest(main);
 // Signup new users
 app.post('/signup', (req, res) => {
     firebaseHelper.firestore
-    .createNewDocument(db, usersCollection, req.body);
+    .createNewDocument(db, userysCollection, req.body);
     res.json({"status": "success"});
 })
 */
@@ -176,7 +179,7 @@ app.post('/create', (req, res) => {
   const month_index = new Date().getMonth();
   const year = new Date().getFullYear();  
   const dateActual = "" + day + " " + month_names[month_index] + " " + year;
-  const data = '{"officeId": '+OFFICE_ID+', "staffId": "'+STAFF_ID+'", "firstname": "MOBILE_NAME", "lastname":"MOBILE_LASTNAME","externalId":"'+req.body.email+'","dateFormat": "dd MMMM yyyy","locale": "en","active": false,"submittedOnDate":"'+dateActual+'", "savingsProductId": '+WALLET_SAVINGS_PRODUCT_ID+' }';
+  const data = '{"address":[{"addressTypeId":16,"street":"ok"}],"officeId": '+OFFICE_ID+', "staffId": "'+STAFF_ID+'", "firstname": "MOBILE_NAME", "lastname":"MOBILE_LASTNAME","externalId":"'+req.body.email+'","dateFormat": "dd MMMM yyyy","locale": "en","active": false,"submittedOnDate":"'+dateActual+'", "savingsProductId": '+WALLET_SAVINGS_PRODUCT_ID+' }';
   console.log("SE ENVIA LA DATA PARA CREAR AL CLIENTE", data);
   instance.post(CLIENTS, data)
   .then(function (response) {
@@ -186,6 +189,8 @@ app.post('/create', (req, res) => {
     .then(function (responseSelf) {
       user.status = "success";
       user.message = responseSelf.data;
+      console.log('     Created A CLIENT WITH data');
+      console.log(user);
       //res.json(CircularJSON.stringify(responseSelf.data)).send();
       res.json(user).send();
 
@@ -357,9 +362,9 @@ ADD IN THIS SECTION ANY CALL TO THE FINERACT API REST
 */
 app.post('/transfertemplate', (req, res) => {
   instanceSelf.defaults.headers.common["Authorization"] = 'Basic '+req.body.key;
-  instanceSelf.get(ACCOUNT_TRANSFER+"/"+"template")
+  instanceSelf.get(ACCOUNT_TRANSFER+"/"+TEMPLATE)
   .then(function (response) {
-    res.json({"data": response.data}).send();
+    res.json({"status":"success", "data": response.data}).send();
     //console.log('Trying to get transfer template');
     //console.log(response.data);   
   })})
@@ -368,7 +373,7 @@ app.post('/getsatransactions', (req, res) => {
   instanceSelf.defaults.headers.common["Authorization"] = 'Basic '+req.body.key;
   instanceSelf.get(SAVINGS_ACCOUNTS+'/'+ req.body.id + '?'+'associations=transactions')
   .then(function (response) {
-    res.json({"data": response.data}).send();
+    res.json({"status":"success", "data": response.data}).send();
   })
 })
 
@@ -376,16 +381,16 @@ app.post('/getsacharges' , (req, res) =>{
   instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+req.body.key;
   instanceSelf.get(SAVINGS_ACCOUNTS+'/'+req.body.id + '/'+ 'charges')
   .then( function(response) {
-    res.json({"data": response.data}).send();
+    res.json({"status":"success", "data": response.data}).send();
   } )
 } )
 
 
 app.post('/gettpttemplate', (req, res) => {
   instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+req.body.key;
-  instanceSelf.get(SAVINGS_ACCOUNTS + '/template?type=tpt')
+  instanceSelf.get(SAVINGS_ACCOUNTS + '/' + TEMPLATE +'?type=tpt')
   .then( function(response) {
-    res.json({"data": response.data}).send();
+    res.json({"status":"success", "data": response.data}).send();
   } )
 } )
 
@@ -393,15 +398,41 @@ app.post('/getptbeneficiary', (req, res) => {
   instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+req.body.key;
   instanceSelf.get(BENEFICIARIES+'/tpt')
   .then( function(response) {
-    res.json({"data": response.data}).send();
+    res.json({"status":"success", "data": response.data}).send();
   })
 } )
+
+app.post('/loanapplytpt', (req, res) => {
+  instanceSelf.defaults.headers.common['Authorixation'] = 'Basic '+req.body.key;
+  console.log('inside loan apply tpt endpoint')
+  instanceSelf.get(LOANS+'/'+TEMPLATE+'?'+
+      'templateType='+ req.body.templateType+
+      '&clientId='+ req.body.clientId+
+      '&productId='+ req.body.productId)
+  .then( function(response) {
+    console.log('get request done with response', response.data)
+    res.json({"status":"success", "data": response.data}).send();
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
+} )
+
+app.post('/listaccounts', (req, res)=>{
+  instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+req.body.key;
+  instanceSelf.get(CLIENTS+'/'+ req.body.clientId + '/accounts')
+  .then( function(response) {
+    res.json({"status": "success", "data": response.data}).send();
+  } )
+} )
+
+
 
 app.post('/maketransfer', (req, res) => {
   instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+req.body.key;
   instanceSelf.post(ACCOUNT_TRANSFER, req.body.data)
   .then( function(response) {
-    res.json({"data": response.data}).send();
+    res.json({"status":"success", "data": response.data}).send();
   })
 } )
 
@@ -409,7 +440,7 @@ app.post('/maketpttransfer', (req, res)=> {
   instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+req.body.key;
   instanceSelf.post(ACCOUNT_TRANSFER+'?type=tpt', req.body.data)
   .then( function(response) {
-    res.json({"data": response.data}).send();
+    res.json({"status":"success", "data": response.data}).send();
   })
 } )
 
@@ -417,9 +448,17 @@ app.post('/addbenefeciary', (req, res) => {
   instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+ req.body.key;
   instanceSelf.post(BENEFICIARIES+'/tpt', req.body.data)
   .then( function(response) {
-    res.json({"data": response.data}).send();
+    res.json({"status":"success", "data": response.data}).send();
   })
 })
+
+app.post('/applyloan', (req, res)=>{
+  instanceSelf.defaults.headers.common['Authorization'] = 'Basic '+ req.body.key;
+  instanceSelf.post(LOANS, req.body.data)
+  .then( function(response) {
+    res.json({"status":"success", "data": response.data}).send();
+  } )
+} )
 /*
 // Login an existing User
 app.post('/login', (req, res) => {
