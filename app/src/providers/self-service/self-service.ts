@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+//import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 import { Api } from '../api/api';
@@ -14,6 +14,7 @@ export class SelfServiceProvider {
 
   _beneficiaries: any;
   _saCharges: any;
+  _accountsList: any;
 
   constructor(public api: Api) { }
 
@@ -50,6 +51,22 @@ export class SelfServiceProvider {
     return seq;
   }
 
+  getAccounts(userinfo: any){
+    console.log('Trying to get the list of accounts');
+    let seq = this.api.post('listaccounts', userinfo).share();
+
+    seq.subscribe((res: any)=> {
+      if (res.data) {
+        console.log('Got the list of accounts');
+        this._accountsList = res.data;
+      } else {
+      }
+    }, err=>{
+      console.log('Error in accounts list call', err);
+      });
+    return seq;
+  }
+
 
 
 
@@ -60,6 +77,10 @@ export class SelfServiceProvider {
 
   listBeneficiaries(){
     return this._beneficiaries;
+  }
+
+  listAccounts(){
+    return this._accountsList;
   }
 
 

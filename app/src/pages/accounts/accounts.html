@@ -24,10 +24,18 @@
 <ion-content>
   <div (tabChanged)="onTabChanged($event)" [currentTab]="default" [ngSwitch]="default" [tabsList]="categories" class="swipe-area" swipe-segment>
     <ion-list *ngSwitchCase="'savings'" >
-      <ion-list *ngFor="let x of savingsAccounts">
-        <ion-card padding="5%" padding-left="10%">
+      <ion-list *ngFor="let x of savingsAccountsList">
+        <ion-card padding="5%" padding-left="10%" (click)="viewAccountDetails()">
           <ion-card-title>{{ x.accountNo }}</ion-card-title>
-          {{x.savingsProductName}}
+          <div class="row">
+            <div class="col">
+            {{x.productName}}
+            </div>
+            <div class="col">
+              <ion-icon *ngIf="x.status.value ==='Active'" name="checkmark-circle"></ion-icon>
+              <ion-icon *ngIf="x.status.value !='Active'" name="alert"></ion-icon>
+            </div>
+            </div>
         </ion-card>
       </ion-list>
       <button (click)="applySavingsAccount()" class="button-float" fab fab-bottom fab-right>
@@ -36,10 +44,10 @@
     </ion-list>
 
     <ion-list *ngSwitchCase="'loan'">
-      <ion-list *ngFor="let y of loanAccounts">
+      <ion-list *ngFor="let y of loanAccountsList">
         <ion-card padding="5%" padding-left="10%">
           <ion-card-title>{{ y.accountNo }}</ion-card-title>
-          {{y.savingsProductName}}
+          {{y.productName}}
         </ion-card>
       </ion-list>
     </ion-list>
