@@ -64,8 +64,9 @@ export class AccountsPage {
     this.navCtrl.push('apply-savings-ac');
   }
 
-  viewAccountDetails(){
-    this.navCtrl.push('account-details');
+  viewAccountDetails(details:any){
+    console.log("trying to open the details");
+    this.navCtrl.push('account-details', {account: details });
   }
 
 }

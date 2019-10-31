@@ -35,7 +35,7 @@ export class SelfServiceProvider {
     return seq;
   }
 
-  getSAChanges(userinfo: any){
+  getSACharges(userinfo: any){
     console.log('Trying to get the list of savings charges');
     let seq = this.api.post('getsacharges', userinfo).share();
 
@@ -82,6 +82,9 @@ export class SelfServiceProvider {
   listAccounts(){
     return this._accountsList;
   }
+  
+
+  
 
 
 }

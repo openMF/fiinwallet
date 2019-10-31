@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {SelfServiceProvider} from "../../providers/self-service/self-service";
+
 
 /**
  * Generated class for the AccountDetailsPage page.
@@ -17,8 +19,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AccountDetailsPage {
 
-  accountDetails: any={};
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  accountDetails: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public self: SelfServiceProvider) {
+    this.accountDetails = this.navParams.get('account');
   }
 
   ionViewDidLoad() {
