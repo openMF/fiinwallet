@@ -5,10 +5,11 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
+<ion-content padding >
+  <div *ngIf="accountDetails">
   <ion-card padding>
     <div class="style-main">Account balance</div>
-    <div class="style-sub">{{ accountDetails.currency.displaySymbol }} {{ accountDetails.accountBalance }}</div>
+    <div class="style-sub">{{ accountDetails.currency.displaySymbol }} {{ accountDetails.summary.accountBalance }}</div>
     <div class="style-main">Account Status</div>
     <div class="style-sub">
       <ion-icon *ngIf="accountDetails.status.value ==='Active'" name="checkmark-circle"></ion-icon>
@@ -18,23 +19,24 @@
     <div class="style-main">Account Number</div>
     <div class="style-sub">{{ accountDetails.accountNo }}</div>
     <div class="style-main">Nominal Interest Rate</div>
-    <div class="style-sub">0.00%</div>
-    <!--<div class="style-main">Total Deposits</div>
-    <div class="style-sub">$ 1,000</div>
+    <div class="style-sub">{{ nominalAnnualInterestRate }}%</div>
+    <div class="style-main">Total Deposits</div>
+    <div class="style-sub">{{ accountDetails.currency.displaySymbol }} {{ accountDetails.summary.totalDeposits }}</div>
     <div class="style-main">Total Withdarawals</div>
-    <div class="style-sub">$ 124.00</div>-->
+    <div class="style-sub">{{ accountDetails.currency.displaySymbol }} {{ accountDetails.summary.totalWithdrawals }}</div>
     <div>
       <button (click)="makeDeposit()" ion-button>Deposit</button>
       <button (click)="makeTransfer()" ion-button solid>Make a Transfer</button>
     </div>
   </ion-card>
-  <!--<div class="style-header" padding-left>Last Transaction Details</div>
+  <div class="style-header" padding-left>Last Transaction Details</div>
   <ion-card padding>
     <div class="style-main">Last Transaction</div>
-    <div class="style-sub">$ 90.00</div>
+    <div class="style-sub">{{ accountDetails.currency.displaySymbol }} {{ accountDetails.transactions[0].amount }}</div>
     <div class="style-main">Made on</div>
-    <div class="style-sub">19 Jul 2019</div>
-  </ion-card>-->
+    <div class="style-sub">{{ accountDetails.transactions[0].date[2] }}-{{ accountDetails.transactions[0].date[1] }}-{{ accountDetails.transactions[0].date[0] }}</div>
+  </ion-card>
+  </div>
   <div class="style-header" padding-left>Monitor</div>
   <ion-card>
     <div class="row">
@@ -49,7 +51,7 @@
       <div class="col col-50">
         <ion-icon class="style-button" name="paper"></ion-icon>
       </div>
-      <div class="col col-50 style-button-text">Charges</div>
+      <div class="col col-50 style-button-text" >Charges</div>
     </div>
   </ion-card>
   <ion-card>

@@ -25,7 +25,7 @@
   <div (tabChanged)="onTabChanged($event)" [currentTab]="default" [ngSwitch]="default" [tabsList]="categories" class="swipe-area" swipe-segment>
     <ion-list *ngSwitchCase="'savings'" >
       <ion-list *ngFor="let x of savingsAccountsList">
-        <ion-card padding="5%" padding-left="10%" (click)="viewAccountDetails(x)">
+        <ion-card padding="5%" padding-left="10%" (click)="viewAccountDetails(x.id)">
           <ion-card-title>{{ x.accountNo }}</ion-card-title>
           <div class="row">
             <div class="col">

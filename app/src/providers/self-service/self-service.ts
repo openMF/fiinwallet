@@ -15,6 +15,7 @@ export class SelfServiceProvider {
   _beneficiaries: any;
   _saCharges: any;
   _accountsList: any;
+  _saTransactions: any;
 
   constructor(public api: Api) { }
 
@@ -68,6 +69,24 @@ export class SelfServiceProvider {
   }
 
 
+  getSATransactions(userinfo: any){
+    console.log("Trying to fetch Transactional assocication as well as account details");
+
+    let seq = this.api.post('getsatransactions', userinfo).share();
+
+    seq.subscribe((res: any)=> {
+      if (res.data) {
+        console.log('Got the transaction details for the account');
+        this._saTransactions = res.data;
+      }
+      else{}
+    }, err=> {
+      console.log('Error in Calling Transactions', err);
+    });
+    return seq;
+  }
+
+
 
 
 
@@ -83,6 +102,13 @@ export class SelfServiceProvider {
     return this._accountsList;
   }
   
+  listSACharges(){
+    return this._saCharges;
+  }
+
+  listSATransactions(){
+    return this._saTransactions;
+  }
 
   
 
