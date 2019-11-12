@@ -19,26 +19,28 @@
     <div class="style-main">Account Number</div>
     <div class="style-sub">{{ accountDetails.accountNo }}</div>
     <div class="style-main">Nominal Interest Rate</div>
-    <div class="style-sub">{{ nominalAnnualInterestRate }}%</div>
+    <div class="style-sub">{{ accountDetails.nominalAnnualInterestRate }}%</div>
     <div class="style-main">Total Deposits</div>
     <div class="style-sub">{{ accountDetails.currency.displaySymbol }} {{ accountDetails.summary.totalDeposits }}</div>
     <div class="style-main">Total Withdarawals</div>
     <div class="style-sub">{{ accountDetails.currency.displaySymbol }} {{ accountDetails.summary.totalWithdrawals }}</div>
-    <div>
+    <!-- <div>
       <button (click)="makeDeposit()" ion-button>Deposit</button>
       <button (click)="makeTransfer()" ion-button solid>Make a Transfer</button>
-    </div>
+    </div> -->
   </ion-card>
+  <div *ngIf="activeAccount">
   <div class="style-header" padding-left>Last Transaction Details</div>
-  <ion-card padding>
+  <ion-card padding >
     <div class="style-main">Last Transaction</div>
     <div class="style-sub">{{ accountDetails.currency.displaySymbol }} {{ accountDetails.transactions[0].amount }}</div>
     <div class="style-main">Made on</div>
     <div class="style-sub">{{ accountDetails.transactions[0].date[2] }}-{{ accountDetails.transactions[0].date[1] }}-{{ accountDetails.transactions[0].date[0] }}</div>
   </ion-card>
   </div>
+  </div>
   <div class="style-header" padding-left>Monitor</div>
-  <ion-card>
+  <ion-card (click)="viewTransactions()">
     <div class="row">
       <div class="col col-50">
         <ion-icon class="style-button" name="swap"></ion-icon>
@@ -46,15 +48,15 @@
       <div class="col col-50 style-button-text">Transactions</div>
     </div>
   </ion-card>
-  <ion-card>
+  <ion-card (click)="viewCharges()">
     <div class="row">
       <div class="col col-50">
         <ion-icon class="style-button" name="paper"></ion-icon>
       </div>
-      <div class="col col-50 style-button-text" >Charges</div>
+      <div class="col col-50 style-button-text">Charges</div>
     </div>
   </ion-card>
-  <ion-card>
+  <ion-card (click)="viewQr()">
     <div class="row">
       <div class="col col-50">
         <ion-icon class="style-button" name="barcode"></ion-icon>

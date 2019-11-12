@@ -22,6 +22,7 @@ export class AccountDetailsPage {
 
   public accountId: any;
   public accountDetails: any;
+  public activeAccount: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public user:User,
      public self: SelfServiceProvider, public loadingCtrl: LoadingController ) {
@@ -42,6 +43,7 @@ export class AccountDetailsPage {
                             "id" : this.accountId })
       .subscribe(() => {
         this.accountDetails = this.self.listSATransactions();
+        this.activeAccount = this.accountDetails.status.active;
         loader.dismiss();
         console.log('Got the account details', this.accountDetails);
       }, err =>{
@@ -51,10 +53,28 @@ export class AccountDetailsPage {
 
   }
 
-  makeDeposit(){
-    console.log('User clicked deposit button');
+  viewTransactions(){
+    if (this.activeAccount){
+      console.log('Get to view transactions ');
+      console.log(this.accountDetails.transactions);
+      this.navCtrl.push('transactions', {transactions: this.accountDetails.transactions});
+    } else {
+      console.log('cant view transactions as account is inactive ');
+    }
+   
   }
-  makeTransfer(){
-    console.log('user clicked make transfer page');
+  viewCharges(){
+    if (this.activeAccount){
+      console.log('Get to view charges ');
+    } else {
+      console.log('cant view charges as account is inactive ');
+    }
+  }
+  viewQr(){
+    if (this.activeAccount){
+      console.log('try to load qr ');
+    } else {
+      console.log('account is inactive ');
+    }
   }
 }
