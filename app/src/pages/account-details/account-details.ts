@@ -66,8 +66,10 @@ export class AccountDetailsPage {
   viewCharges(){
     if (this.activeAccount){
       console.log('Get to view charges ');
+      this.navCtrl.push('saving-charges', {account: this.accountId});
     } else {
       console.log('cant view charges as account is inactive ');
+      alert('Account is Inactive');
     }
   }
   viewQr(){
@@ -75,6 +77,7 @@ export class AccountDetailsPage {
       console.log('try to load qr ');
     } else {
       console.log('account is inactive ');
+      alert('Account is Inactive');
     }
   }
 }

@@ -19,9 +19,11 @@ import {SelfServiceProvider} from "../../providers/self-service/self-service";
 })
 export class SavingChargesPage {
   charges: any;
+  accountId: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public self: SelfServiceProvider, public loadingCtrl: LoadingController, public user: User) {
+      this.accountId = navParams.get('account');
   }
 
   ionViewDidLoad() {
@@ -34,7 +36,8 @@ export class SavingChargesPage {
       content: 'Please wait...'
     });
     loader.present();
-    this.self.getSACharges({"key": this.user.userinfo().authentication.base64EncodedAuthenticationKey})
+    this.self.getSACharges({"key": this.user.userinfo().authentication.base64EncodedAuthenticationKey,
+                            "id" : this.accountId})
       .subscribe(() => {
         this.charges = this.self.listSACharges();
         loader.dismiss();
@@ -45,4 +48,5 @@ export class SavingChargesPage {
       });
   
   }
+
 }
