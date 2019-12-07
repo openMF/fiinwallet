@@ -6,8 +6,13 @@ The app currently runs on Ionic 3 framework using Typescript. The Ionic [Ionic F
     
     git clone https://github.com/openMF/fiinwallet
     
-    cd fiinwallet
+    cd fiinwallet/app
     
     npm install
     
     ionic serve
+
+
+# To generate signed release APK for Android:
+
+Please refer [APK generation guidelines](https://gist.github.com/manigedit/d5260b2d0e53c2a737f8639b081a581f)

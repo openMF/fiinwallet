@@ -2,30 +2,26 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the NewBeneficiaryPage page.
+ * Generated class for the AddBenefeciaryPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
 
 @IonicPage({
-  name: 'new-beneficiary'
+  name: 'add-benefeciary'
 })
 @Component({
-  selector: 'page-new-beneficiary',
-  templateUrl: 'new-beneficiary.html',
+  selector: 'page-add-benefeciary',
+  templateUrl: 'add-benefeciary.html',
 })
-export class NewBeneficiaryPage {
+export class AddBenefeciaryPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NewBeneficiaryPage');
-  }
-  
-  addManually(){
-    this.navCtrl.push('add-benefeciary');
+    console.log('ionViewDidLoad AddBenefeciaryPage');
   }
 
 }
