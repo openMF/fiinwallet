@@ -87,6 +87,13 @@ export class SelfServiceProvider {
   }
 
 
+  applySavingsAc(userinfo: any){
+    // currently the self service does not support applying for new savings account
+    // the user is already provided with one savings account after the sign up and kyc is complete
+
+  }
+
+
 
 
 
